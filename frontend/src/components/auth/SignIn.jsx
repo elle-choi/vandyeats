@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { auth } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import logo from "../../assets/logo.png";
 import "./SignIn.css";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const signIn = (e) => {
     //so page does not get reloaded when form is submitted
     e.preventDefault();
@@ -15,9 +17,12 @@ const SignIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
+        navigate("/home");
+        setErrorMessage("Success!");
       })
       .catch((error) => {
         console.log(error);
+        setErrorMessage("Invalid email or password. Please try again.");
       });
   };
   return (
@@ -41,7 +46,7 @@ const SignIn = () => {
         Forgot Password?
       </Link>
       <button type="submit">Submit</button>
-
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
       <Link to="/signup" className="signup-link">
         Dont have an account? <strong>Sign Up</strong>
       </Link>
