@@ -6,8 +6,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    width: 100%; /* Set the width to 100% */
-    margin: 0; /* Remove margin */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensure the navbar is above other elements */
   }
   
   .left-section {
@@ -16,7 +18,7 @@
   }
   
   .logo-left {
-    width: 50px; /* Adjust the width as needed */
+    width: 50px;
     margin-right: 20px;
   }
   
@@ -33,10 +35,40 @@
   .right-section {
     display: flex;
     align-items: center;
+    margin-left: auto; /* Push the right section to the right */
   }
   
   .logo-right {
-    width: 100px; /* Adjust the width as needed */
+    width: 100px;
     margin-right: 50px;
+  }
+  
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: left;
+      margin-top: 10px;
+    }
+  
+    .links.show {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
   }
   
