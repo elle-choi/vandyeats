@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logoLeft from "../assets/Vanderbilt_University_logo.png";
-import logoRight from "../assets/logo.png";
+import logoLeft from "./Vanderbilt_University_logo.png";
+import logoRight from "./logo.png";
 import "./NavBar.css"
 
 const Navbar = () => {
