@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -18,7 +18,7 @@
   }
   
   .logo-left {
-    width: 50px;
+    width: 60px;
     margin-right: 20px;
   }
   
@@ -35,12 +35,12 @@
   .right-section {
     display: flex;
     align-items: center;
-    margin-left: auto; /* Push the right section to the right */
+    /* Ensure spacing is consistent between items */
   }
   
   .logo-right {
-    width: 100px;
-    margin-right: 50px;
+    width: 150px;
+    /* Remove margin-right if you no longer need space on the right of the logo */
   }
   
   .menu-icon {
@@ -70,5 +70,6 @@
     .menu-icon {
       display: block;
     }
+
   }
   
