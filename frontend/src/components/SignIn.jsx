@@ -28,9 +28,13 @@ const SignIn = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
-        setErrorMessage("An error occurred during sign in. Please try again.");
+        console.error("Sign-in error", error);
+        setErrorMessage(`Sign-in failed: ${error.message}`);
       });
+      //.catch((error) => {
+        //console.log(error);
+        //setErrorMessage("An error occurred during sign in. Please try again.");
+      //});
   };
 
   return (
