@@ -1,55 +1,49 @@
 import React, { useState } from "react";
 import { auth } from "../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { Link, useNavigate} from "react-router-dom";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "./logo.png";
 import "./SignIn.css";
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const signIn = (e) => {
-    //so page does not get reloaded when form is submitted
-    e.preventDefault();
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-        navigate("/home");
-        setErrorMessage("Success!");
+  const signInWithGoogle = (e) => {
+    e.preventDefault(); // Prevent the default form submit action
+    const provider = new GoogleAuthProvider();
+
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+
+        // Check if the email ends with "vanderbilt.edu"
+        if (user.email && user.email.endsWith("@vanderbilt.edu")) {
+          console.log(user);
+          navigate("/home"); // Navigate to the home page on successful sign in
+        } else {
+          // Sign out the user if the email domain is not "vanderbilt.edu"
+          auth.signOut();
+          setErrorMessage("Access denied. Only Vanderbilt University emails are allowed.");
+        }
       })
       .catch((error) => {
-        console.log(error);
-        setErrorMessage("Invalid email or password. Please try again.");
+        console.error("Sign-in error", error);
+        setErrorMessage(`Sign-in failed: ${error.message}`);
       });
+      //.catch((error) => {
+        //console.log(error);
+        //setErrorMessage("An error occurred during sign in. Please try again.");
+      //});
   };
+
   return (
     <div className="login-container">
       <img src={logo} alt="Logo" className="logo" />
-      <form onSubmit={signIn}>
-        <h2>Log In</h2>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Link to="/forgot-password" className="forgot-password">
-        Forgot Password?
-      </Link>
-      <button type="submit">Submit</button>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-      <Link to="/signup" className="signup-link">
-        Dont have an account? <strong>Sign Up</strong>
-      </Link>
+      <form onSubmit={signInWithGoogle}>
+        <h2>Log In with Google</h2>
+        <button type="submit">Sign In with Google</button>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
       </form>
     </div>
   );
