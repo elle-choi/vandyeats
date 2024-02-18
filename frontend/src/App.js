@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LoginPage from "./components/auth/SignIn.jsx"
+import LoginPage from "./components/SignIn.jsx"
 // import ForgotPassword from "./components/ForgotPassword";
-import SignupLink from "./components/auth/SignUp.jsx";
+import SignupLink from "./components/SignUp.jsx";
 import HomePage from "./components/HomePage.jsx" 
 import BlogsPage from "./components/BlogsPage.jsx" 
 import RestaurantPage from "./components/RestaurantPage.jsx" 

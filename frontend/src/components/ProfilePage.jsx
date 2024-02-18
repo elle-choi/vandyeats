@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./NavBar.js";
-import background from "../assets/linkedin-cover.jpg"
+import background from "./linkedin-cover.jpg"
 import "./HomePage.css";
 
 const Home = () => {
