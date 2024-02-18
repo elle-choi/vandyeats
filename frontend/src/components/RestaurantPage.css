@@ -1,0 +1,106 @@
+.restaurant-page {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* This ensures vertical alignment */
+    margin: 20px 0;
+  }
+  
+  .search-input {
+    flex-grow: 1; /* Allows input to fill available space */
+    max-width: 600px; /* Maximum width of the input, adjust as needed */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #ccc; /* Light grey border */
+    border-radius: 50px; /* Fully rounded borders on the left */
+    border-right: none; /* Remove the right border where the button will be */
+    outline: none;
+    height: 40px; /* Fixed height */
+  }
+  
+  .search-button {
+    background-color: #fff; /* Match the input field color */
+    border: 2px solid #ccc; /* Match the input field border */
+    border-radius: 0 50px 50px 0; /* Fully rounded borders on the right */
+    padding: 0 15px; /* Padding inside the button */
+    cursor: pointer;
+    font-size: 16px; /* Match the input field font size */
+    line-height: 40px; /* Align the height with the input field */
+    height: 44px; /* Height including border to match input field */
+    box-sizing: border-box; /* Include padding and border in the height */
+  }
+  
+  
+  .page-header {
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+  }
+  
+  /* Add any additional styling needed for the header text */
+  .page-header h1 {
+    font-size: 2.5rem; /* Adjust size as needed */
+  }
+  
+  .header-image {
+    max-width: 100%; /* Ensure the image is responsive and fits the width of its container */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  
+  .taste-nashville-section {
+    text-align: center;
+    /* Other styling */
+  }
+  
+  .restaurant-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .restaurant-logo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .restaurant-logo-card img {
+    max-width: 100px; /* Adjust as needed */
+    margin-bottom: 8px;
+  }
+  .footer {
+    background-color: #333; /* Dark background color */
+    color: white; /* White text */
+    padding: 1rem;
+    text-align: center; /* Center the text */
+  }
+  
+  .footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 0.875rem;
+  }
+  
+  /* Adjustments for responsive behavior */
+  @media (max-width: 768px) {
+    .search-input,
+    .search-button {
+      width: auto; /* Auto width for small screens */
+      flex-grow: 1; /* Allow both input and button to grow */
+    }
+  
+    .search-container {
+      margin: 10px; /* Smaller margin on small screens */
+    }
+  }
+  
