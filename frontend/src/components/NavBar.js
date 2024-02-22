@@ -24,7 +24,7 @@ const Navbar = () => {
               </Link>
               
               <div className={`links ${menuOpen ? "show" : ""}`}>
-                  <Link to="/restaurant">Restaurant</Link>
+                  <Link to="/restaurant">Restaurants</Link>
                   <Link to="/blogs">Blogs</Link>
                   <Link to="/profile">Profile</Link>
               </div>

@@ -1,0 +1,73 @@
+.slide {
+  display: none;
+  position: relative; /* Ensure this is set to make .content position correctly */
+}
+
+.slide.active {
+  display: block;
+}
+
+.content {
+  position: absolute; /* Absolute position for floating effect */
+  bottom: 20px; /* Adjust as needed */
+  left: 20px; /* Adjust as needed */
+  color: white; /* Ensure text is visible on image */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  padding: 10px;
+}
+
+/* Ensure .author and .title are styled appropriately */
+.author, .title {
+  margin: 0; /* Remove default margins */
+}
+  
+.left-arrow, .right-arrow {
+  position: absolute;
+  /*display: inline-block;*/
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: black; /* Adjust the color as needed */
+  opacity: 0.5; /* Semi-transparent */
+  border: none;
+  font-size: 64px; /* Increased initial size of arrows */
+  z-index: 2; /* Ensure arrows are above the image */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  outline: none; /* Remove outline */
+  background-color: transparent;
+}
+
+.left-arrow {
+  left: -500px;
+}
+
+.right-arrow {
+  right: -500px;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+  opacity: 1; /* Fully visible on hover */
+  font-size: 42px; /* Further increase size on hover */
+  outline: none; /* Ensure outline is removed on hover too */
+  background-color: transparent;
+}
+
+  .trending-restaurants .restaurants-list {
+    display: flex;
+    overflow-x: auto;
+    color: black;
+  }
+  
+  .restaurant-item {
+    text-align: center;
+    margin-right: 20px;
+    color: black;
+  }
+  
+  .restaurant-item img {
+    width: 200px; /* Set your desired size */
+    margin-bottom: 8px;
+  }
+  
+  /* Add responsive styles as needed */
+  

@@ -8,6 +8,7 @@ import BlogsPage from "./components/BlogsPage.jsx"
 import RestaurantPage from "./components/RestaurantPage.jsx" 
 import ProfilePage from "./components/ProfilePage.jsx" 
 
+
 const App = () => {
   return (
     <Router>
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/" element={<LoginPage />} />
+
       </Routes>
     </Router>
   );

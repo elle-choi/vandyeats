@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    /* background-color: #EFEBCE; */
+    padding-top: 100px; /* Adjust based on your navbar's height */
+    background-color: #EFEBCE;
   }
 
 .navbar {

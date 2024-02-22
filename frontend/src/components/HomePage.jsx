@@ -1,16 +1,21 @@
-import React from "react";
-import Navbar from "./NavBar.js";
-import "./HomePage.css";
+import React from 'react';
+import Navbar from './NavBar.js'; // Assuming you have a Navbar component
+import BlogPostCarousel from './Slider.js';
+import TrendingRestaurants from './TrendingRestaurants';
+import { blogPostsData } from './RestaurantData';
+import './HomePage.css'; // Your CSS file for HomePage
 
-const Home = () => {
-    return (
-      <div>
-        <Navbar />
-        <div className="content">
-          <h1>Welcome to the Home Page</h1>
-        </div>
-      </div>
-    );
-  };
-  
-  export default Home;
+const HomePage = () => {
+
+
+  return (
+    <div className="homepage">
+      <Navbar />
+      <BlogPostCarousel blogPosts={blogPostsData} />
+      <TrendingRestaurants />
+      {/* ... other homepage content ... */}
+    </div>
+  );
+};
+
+export default HomePage;
