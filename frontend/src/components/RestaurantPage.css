@@ -1,106 +1,190 @@
 .restaurant-page {
-    font-family: 'Arial', sans-serif;
+  position: relative; /* Ensure this is here if using absolute positioning for the container */
+  font-family: Arial, sans-serif;
+  background-color: #FFF9EF; /* New background color */
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative; 
+  top: 80px; /* Adjust this to lower or raise the search container */
+  right: 0;
+  padding: 8px;
+  margin: 100px auto;
+  max-width: 500px;
+  background-color: transparent;
+  border-radius: 0 50px 50px 0;
+  width: auto; /* Changed from 2000px to auto for better responsiveness */
+  color: #060505;
+}
+
+.search-form {
+  display: flex;
+  justify-content: flex-end; /* This ensures alignment to the right */
+  width: 95%; /* Ensure the form takes up the entire container width */
+  height: 64px;
+}
+
+
+.search-input, .search-button {
+  border: 2px solid #ccc;
+  padding: 20px;
+  height: 40px; /* Adjust the height as needed */
+  border-radius: 20px; /* Creates a rounded appearance */
+  box-sizing: border-box; /* Ensures padding and border are included in the height */
+
+}
+.search-input {
+  flex-grow: 1;
+  border: 2px solid #ccc; /* Subtle border for definition */
+  padding: 10px 20px;
+  border-radius: 40px; /* Increase border-radius for more rounded corners */
+  margin-right: 10px; /* Space between input and button */
+  font-size: 16px; /* Adjust as necessary for readability */
+  color: #000; /* Set text color to black or any dark color for visibility */
+  background-color: #FFF; /* Optional: set a background color if needed */
+}
+
+
+.search-button {
+  right: 0; /* This positions the container to the right */
+  background-color: #FFF;
+  border-left: none; /* Removes the border between the input and the button */
+  border-radius: 0 20px 20px 0; /* Round right corners */
+  width: 50px; /* Adjust width as necessary */
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute; 
+
+}
+form {
+  display: relative;
+  justify-content: flex-end; /* Aligns items to the right */
+}
+
+.search-button::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.search-button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 1px;
+  transform: rotate(45deg);
+  top: 60%;
+  left: 60%;
+}
+
+.title {
+  color: #000000; /* Adjust the color as needed */
+  text-align: left;
+  margin-bottom: 0.5rem; /* Adjust the space between title and line */
+  font-weight: bold; /* Makes the text bold */
+  font-size: 2rem; /* Increases the size of the text; adjust as needed */
+}
+
+.navbar, .search-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap as needed */
+  justify-content: space-between; /* Adjust as necessary */
+  align-items: center;
+}
+.search-input, .search-button {
+  flex-shrink: 0; /* Prevents shrinking on smaller screens */
+}
+
+
+.title-line {
+  border: 0;
+  height: 2px;
+  background: #000000; /* Adjust line color as needed */
+  margin-bottom: 20px; /* Adjust space between line and text */
+}
+
+
+.content {
+  padding: 20px;
+}
+
+.content h1, .content p {
+  color: #000000;
+  line-height: 1.6;
+}
+
+.restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.restaurant img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.restaurant p {
+  text-align: center;
+}
+.balance-info {
+  margin-bottom: 50px; /* Adjust the space as needed */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content {
+    padding: 10px;
   }
-  
-  .search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* This ensures vertical alignment */
-    margin: 20px 0;
+
+  .content h1 {
+    font-size: 1.5rem;
   }
-  
+
+  .content p {
+    font-size: 0.9rem;
+  }
+
+  .restaurants-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurants-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant p {
+    font-size: 0.8rem;
+  }
+}
+
+
+@media (max-width: 768px) {
   .search-input {
-    flex-grow: 1; /* Allows input to fill available space */
-    max-width: 600px; /* Maximum width of the input, adjust as needed */
-    padding: 10px 20px;
-    font-size: 16px;
-    border: 2px solid #ccc; /* Light grey border */
-    border-radius: 50px; /* Fully rounded borders on the left */
-    border-right: none; /* Remove the right border where the button will be */
-    outline: none;
-    height: 40px; /* Fixed height */
+    width: auto; /* Allows the input field to adjust its width */
+    flex-grow: 1; /* Takes available space */
   }
   
   .search-button {
-    background-color: #fff; /* Match the input field color */
-    border: 2px solid #ccc; /* Match the input field border */
-    border-radius: 0 50px 50px 0; /* Fully rounded borders on the right */
-    padding: 0 15px; /* Padding inside the button */
-    cursor: pointer;
-    font-size: 16px; /* Match the input field font size */
-    line-height: 40px; /* Align the height with the input field */
-    height: 44px; /* Height including border to match input field */
-    box-sizing: border-box; /* Include padding and border in the height */
+    margin-left: 10px; /* Ensures some space between the input and button */
   }
-  
-  
-  .page-header {
-    background-size: cover;
-    background-position: center;
-    height: 300px; /* Adjust the height as needed */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    width: 100%;
-  }
-  
-  /* Add any additional styling needed for the header text */
-  .page-header h1 {
-    font-size: 2.5rem; /* Adjust size as needed */
-  }
-  
-  .header-image {
-    max-width: 100%; /* Ensure the image is responsive and fits the width of its container */
-    height: auto; /* Maintain aspect ratio */
-  }
-  
-  
-  .taste-nashville-section {
-    text-align: center;
-    /* Other styling */
-  }
-  
-  .restaurant-logos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .restaurant-logo-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .restaurant-logo-card img {
-    max-width: 100px; /* Adjust as needed */
-    margin-bottom: 8px;
-  }
-  .footer {
-    background-color: #333; /* Dark background color */
-    color: white; /* White text */
-    padding: 1rem;
-    text-align: center; /* Center the text */
-  }
-  
-  .footer p {
-    margin: 0; /* Remove default margin */
-    font-size: 0.875rem;
-  }
-  
-  /* Adjustments for responsive behavior */
-  @media (max-width: 768px) {
-    .search-input,
-    .search-button {
-      width: auto; /* Auto width for small screens */
-      flex-grow: 1; /* Allow both input and button to grow */
-    }
-  
-    .search-container {
-      margin: 10px; /* Smaller margin on small screens */
-    }
-  }
-  
+}

@@ -7,6 +7,7 @@ import HomePage from "./components/HomePage.jsx"
 import BlogsPage from "./components/BlogsPage.jsx" 
 import RestaurantPage from "./components/RestaurantPage.jsx" 
 import ProfilePage from "./components/ProfilePage.jsx" 
+import BahnMi from "./components/BahnMi.jsx" 
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/" element={<LoginPage />} />
+        <Route path="/BahnMi" element={<BahnMi />} />
       </Routes>
     </Router>
   );

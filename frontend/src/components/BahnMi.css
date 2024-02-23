@@ -1,0 +1,9 @@
+.banhMiBackground {
+    height: 100vh; /* Full height of the viewport */
+    width: 100vw; /* Full width of the viewport */
+    background-image: url('../assets/bahnMiBackground.png'); /* Adjust the path to where your image is stored */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: 100%; /* Cover the entire page, might crop some parts of the image */
+  }
+  
