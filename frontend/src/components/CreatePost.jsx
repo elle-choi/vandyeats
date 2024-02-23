@@ -43,13 +43,13 @@ const CreatePost = () => {
 
   const renderStars = () => {
     const stars = [];
-    for (let i = 0.5; i <= 5; i += 0.5) {
+    for (let i = 1; i <= 5; i++) {
       stars.push(
         <span key={i} onClick={() => handleStarClick(i)}>
           <FaStar
             className={`cursor-pointer text-${rating >= i ? 'yellow' : 'gray'}-500 ${
-              rating >= i ? 'fill-current' : 'fill-transparent'
-            }${i - Math.floor(i) === 0.5 ? ' half-filled' : ''}`}
+              rating > 0 ? 'fill-current' : 'fill-transparent'
+            }`}
           />
         </span>
       );
