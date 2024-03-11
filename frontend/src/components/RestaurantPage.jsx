@@ -42,26 +42,26 @@ const RestaurantPage = () => {
   return (
     <div className="restaurant-page">
       <NavBar />
-      <div className="container">
-        <form onSubmit={handleSearchSubmit} className="search-form">
+      <div className="res-container">
+        <form onSubmit={handleSearchSubmit} className="res-search-form">
           <input
             type="text"
             placeholder="Search ..."
             value={searchQuery}
             onChange={handleSearchChange}
-            className="search-input"
+            className="res-search-input"
           />
-          <button type="submit" className="search-button"></button>
+          <button type="submit" className="res-search-button"></button>
         </form>
       </div>
-      <div className="banner">
+      <div className="res-banner">
         <img src={bannerImage} alt="Campus Dining Division of Administration" />
       </div>
-      <div className="content">
-  <h1 className="title">Taste of Nashville</h1>
-  <hr className="title-line" /> {/* This is the line added after the title */}
+      <div className="res-content">
+  <h1 className="res-title">Taste of Nashville</h1>
+  <hr className="res-title-line" /> {/* This is the line added after the title */}
   <p>VU Meal Plans provide you with a Meal Money Account that can be used to purchase food at all on-campus restaurants and Markets, as well as at participating off-campus restaurants through the Taste of Nashville program.</p>
-  <p className="balance-info">You can check your balance or add to your Meal Money Account anytime by visiting the Commodore Card Office online or in 184 Sarratt.</p>
+  <p className="res-balance-info">You can check your balance or add to your Meal Money Account anytime by visiting the Commodore Card Office online or in 184 Sarratt.</p>
   <div className="restaurants-grid">
     {/* Restaurant items */}
     <div className="restaurant">
@@ -102,3 +102,4 @@ const RestaurantPage = () => {
 };
 
 export default RestaurantPage;
+

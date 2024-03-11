@@ -4,7 +4,7 @@
   background-color: #FFF9EF; /* New background color */
 }
 
-.container {
+.restaurant-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -20,7 +20,7 @@
   color: #060505;
 }
 
-.search-form {
+.res-search-form {
   display: flex;
   justify-content: flex-end; /* This ensures alignment to the right */
   width: 95%; /* Ensure the form takes up the entire container width */
@@ -28,7 +28,7 @@
 }
 
 
-.search-input, .search-button {
+.res-search-input, .res-search-button {
   border: 2px solid #ccc;
   padding: 20px;
   height: 40px; /* Adjust the height as needed */
@@ -36,7 +36,7 @@
   box-sizing: border-box; /* Ensures padding and border are included in the height */
 
 }
-.search-input {
+.res-search-input {
   flex-grow: 1;
   border: 2px solid #ccc; /* Subtle border for definition */
   padding: 10px 20px;
@@ -48,7 +48,7 @@
 }
 
 
-.search-button {
+.res-search-button {
   right: 0; /* This positions the container to the right */
   background-color: #FFF;
   border-left: none; /* Removes the border between the input and the button */
@@ -59,14 +59,15 @@
   justify-content: flex-end;
   align-items: center;
   position: absolute; 
-
+ 
+  
 }
 form {
   display: relative;
   justify-content: flex-end; /* Aligns items to the right */
 }
 
-.search-button::before {
+.res-search-button::before {
   content: '';
   display: block;
   position: absolute;
@@ -79,7 +80,7 @@ form {
   transform: translate(-50%, -50%);
 }
 
-.search-button::after {
+.res-search-button::after {
   content: '';
   display: block;
   position: absolute;
@@ -92,7 +93,7 @@ form {
   left: 60%;
 }
 
-.title {
+.res-title {
   color: #000000; /* Adjust the color as needed */
   text-align: left;
   margin-bottom: 0.5rem; /* Adjust the space between title and line */
@@ -100,18 +101,18 @@ form {
   font-size: 2rem; /* Increases the size of the text; adjust as needed */
 }
 
-.navbar, .search-container {
+.navbar, .res-search-container {
   display: flex;
   flex-wrap: wrap; /* Allows items to wrap as needed */
   justify-content: space-between; /* Adjust as necessary */
   align-items: center;
 }
-.search-input, .search-button {
+.res-search-input, .res-search-button {
   flex-shrink: 0; /* Prevents shrinking on smaller screens */
 }
 
 
-.title-line {
+.res-title-line {
   border: 0;
   height: 2px;
   background: #000000; /* Adjust line color as needed */
@@ -119,11 +120,11 @@ form {
 }
 
 
-.content {
+.res-content {
   padding: 20px;
 }
 
-.content h1, .content p {
+.res-content h1, .res-content p {
   color: #000000;
   line-height: 1.6;
 }
@@ -150,15 +151,15 @@ form {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .content {
+  .res-content {
     padding: 10px;
   }
 
-  .content h1 {
+  .res-content h1 {
     font-size: 1.5rem;
   }
 
-  .content p {
+  .res-content p {
     font-size: 0.9rem;
   }
 
@@ -179,12 +180,12 @@ form {
 
 
 @media (max-width: 768px) {
-  .search-input {
+  .res-search-input {
     width: auto; /* Allows the input field to adjust its width */
     flex-grow: 1; /* Takes available space */
   }
   
-  .search-button {
+  .res-search-button {
     margin-left: 10px; /* Ensures some space between the input and button */
   }
 }
