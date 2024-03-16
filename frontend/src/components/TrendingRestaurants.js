@@ -14,7 +14,7 @@ const TrendingRestaurants = () => {
 
   return (
     <div className="trending-restaurants">
-      <h2>Trending Restaurants</h2>
+      <h2 style={{ color: 'black' }}>Trending Restaurants</h2>
       <div className="restaurants-list">
         {restaurants.map((restaurant, index) => (
           <div className="restaurant-item" key={index}>
