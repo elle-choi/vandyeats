@@ -55,7 +55,6 @@
   .trending-restaurants .restaurants-list {
     display: flex;
     overflow-x: auto;
-    color: black;
   }
   
   .restaurant-item {
