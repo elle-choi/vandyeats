@@ -10,6 +10,12 @@
     left: 0;
 }
 
+.blog-carousel {
+  width: 100%; /* Set the slider's width to fill its parent container */
+  /* Remove any margins or padding if they exist, or adjust them accordingly */
+  margin: 0;
+  padding: 0;
+}
 body, html {
   overflow-x: hidden; /* This will hide horizontal scrollbars and prevent scrolling to the right */
 }

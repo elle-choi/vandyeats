@@ -94,31 +94,4 @@
   background-color: transparent;
 }
 
-  .trending-restaurants .restaurants-list {
-    display: flex;
-    overflow-x: auto;
-  }
-  
-  .restaurant-item {
-    text-align: center;
-    margin-right: 20px;
-    color: black;
-  }
-  
-  .restaurant-item img {
-    width: 200px; /* Set your desired size */
-    margin-bottom: 8px;
-  }
-  
-  /* Add responsive styles as needed */
-  @media (max-width: 768px) {
-  .content {
-    bottom: 10px;
-    left: 10px;
-    width: calc(100% - 20px); /* Adjust based on the left and right spacing */
-  }
-  
-  .title, .author {
-    font-size: smaller; /* Adjust font size for smaller screens */
-  }
-}
+
