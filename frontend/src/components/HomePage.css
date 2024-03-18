@@ -9,3 +9,7 @@
     top: 0; /* Position at the top */
     left: 0;
 }
+
+body, html {
+  overflow-x: hidden; /* This will hide horizontal scrollbars and prevent scrolling to the right */
+}
