@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./NavBar.js";
-import background from "../assets/background.jpeg"
+import background from "../assets/background.webp"
 import "./HomePage.css";
 
 const Home = () => {
