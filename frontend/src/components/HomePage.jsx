@@ -9,6 +9,7 @@ import './HomePage.css'; // Your CSS file for HomePage
 
 const HomePage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
+  const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
     const fetchBlogPosts = async () => {
@@ -27,10 +28,10 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      <Navbar />
-      {blogPosts.length > 0 && <BlogPostCarousel blogPosts={blogPosts} />}
-      <TrendingRestaurants />
-      {/* ... other homepage content ... */}
+      <Navbar Navbar={Navbar} />
+      <BlogPostCarousel blogPosts={blogPosts} />
+      <TrendingRestaurants restaurants={restaurants} />
+      {/* Other homepage content */}
     </div>
   );
 };

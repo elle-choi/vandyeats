@@ -3,6 +3,7 @@ import sitarLogo from '../assets/sitar.png';
 import grainberryLogo from '../assets/grain-berry.png';
 import centralbbqLogo from '../assets/central-bbq.png';
 import biscuitloveLogo from '../assets/biscuit-love.png';
+import "./TrendingRestaurants.css";
 
 const TrendingRestaurants = () => {
   const restaurants = [
@@ -14,7 +15,7 @@ const TrendingRestaurants = () => {
 
   return (
     <div className="trending-restaurants">
-      <h2 style={{ color: 'black' }}>Trending Restaurants</h2>
+      <h2 className="trending-restaurants-title">Trending Restaurants</h2>
       <div className="restaurants-list">
         {restaurants.map((restaurant, index) => (
           <div className="restaurant-item" key={index}>
