@@ -156,12 +156,12 @@ const Home = () => {
                       <div class="flex w-full my-2">    
                         {/* person image */}
                         <svg class='w-5 h-5 mx-4 ' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="person"><g data-name="Layer 2"><path d="M12 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm6 10a1 1 0 0 0 1-1 7 7 0 0 0-14 0 1 1 0 0 0 1 1z" data-name="person"></path></g></svg>
-                        <h5 class='text-[#212121] text-sm '>Felmale</h5>
+                        <h5 class='text-[#212121] text-sm '>Female</h5>
                       </div>    
                       <div class="flex w-full my-2">  
                        {/* cake image */}  
                         <svg class='w-5 h-5 mx-4' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="cake"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M12.68 5.88c.7-.24 1.22-.9 1.3-1.64.05-.47-.05-.91-.28-1.27L12.42.75c-.19-.33-.67-.33-.87 0l-1.28 2.22c-.17.3-.27.65-.27 1.03 0 1.32 1.3 2.35 2.68 1.88zm3.85 10.04l-1-1-1.08 1.07c-1.3 1.3-3.58 1.31-4.89 0l-1.07-1.07-1.09 1.07C6.75 16.64 5.88 17 4.96 17c-.73 0-1.4-.23-1.96-.61V20c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-3.61c-.75.51-1.71.75-2.74.52-.66-.14-1.25-.51-1.73-.99zM18 9h-5V8c0-.55-.45-1-1-1s-1 .45-1 1v1H6c-1.66 0-3 1.34-3 3v1.46c0 .85.5 1.67 1.31 1.94.73.24 1.52.06 2.03-.46l2.14-2.13 2.13 2.13c.76.76 2.01.76 2.77 0l2.14-2.13 2.13 2.13c.43.43 1.03.63 1.65.55.99-.13 1.69-1.06 1.69-2.06v-1.42C21 10.34 19.66 9 18 9z"></path></svg>
-                        <h5 class='text-[#212121] text-sm '>Born Jun 18, 2002</h5>
+                        <h5 class='text-[#212121] text-sm '>Jun 18, 2002</h5>
                       </div>   
                       <div class="flex w-full my-2">    
                         {/* location pin image */}
@@ -170,18 +170,14 @@ const Home = () => {
                             c0.7296104-0.7679901,17.9136333-19.0655861,17.9136333-29.0783806C48.6144142,14.3520117,40.2624016,6,30,6z M30,32.5359383
                             c-4.3729687,0-7.9307804-3.5535946-7.9307804-7.9214077c0-4.3729687,3.5578117-7.9307804,7.9307804-7.9307804
                             c4.373436,0,7.9312515,3.5578117,7.9312515,7.9307804C37.9312515,28.9823437,34.373436,32.5359383,30,32.5359383z"></path></svg>
-                        <h5 class='text-[#212121] text-sm '>Venderbilt</h5>
+                        <h5 class='text-[#212121] text-sm '>Rothschild College</h5>
                       </div>  
                       <div class="flex w-full my-2"> 
                        {/* mail image */}   
                         <svg class='w-5 h-5 mx-4' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="mail"><path fill="#231f20" d="M16,14.81,28.78,6.6A3,3,0,0,0,27,6H5a3,3,0,0,0-1.78.6Z"></path><path fill="#231f20" d="M16.54,16.84h0l-.17.08-.08,0A1,1,0,0,1,16,17h0a1,1,0,0,1-.25,0l-.08,0-.17-.08h0L2.1,8.26A3,3,0,0,0,2,9V23a3,3,0,0,0,3,3H27a3,3,0,0,0,3-3V9a3,3,0,0,0-.1-.74Z"></path></svg>
-                        <h6 class='text-[#212121] text-[10px]'>catherine.choi@venderbilt.edu</h6>
+                        <h6 class='text-[#212121] text-[10px]'>catherine.choi@vanderbilt.edu</h6>
                       </div>  
-                      <div class="flex w-full my-2">  
-                        {/* phone image */}  
-                        <svg class='w-5 h-5 mx-4' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="phone"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M19.23 15.26l-2.54-.29c-.61-.07-1.21.14-1.64.57l-1.84 1.84c-2.83-1.44-5.15-3.75-6.59-6.59l1.85-1.85c.43-.43.64-1.03.57-1.64l-.29-2.52c-.12-1.01-.97-1.77-1.99-1.77H5.03c-1.13 0-2.07.94-2 2.07.53 8.54 7.36 15.36 15.89 15.89 1.13.07 2.07-.87 2.07-2v-1.73c.01-1.01-.75-1.86-1.76-1.98z"></path></svg>
-                        <h6 class='text-[#212121] text-sm'>1234567890</h6>
-                      </div> 
+            
                     </div>
                   </div>
                   {/* my blog list space */}
