@@ -85,16 +85,22 @@ const RestaurantPage = () => {
             </Link>
           </div>
           <div className="restaurant">
+            <Link to={"restaurantinfo?re_info=3"}>
             <img src={centralBbq} alt="Central BBQ" />
             <p>Central BBQ</p>
+            </Link>
           </div>
           <div className="restaurant">
+            <Link to={"restaurantinfo?re_info=4"}>
             <img src={grainBerry} alt="Grain & Berry" />
             <p>Grain & Berry</p>
+            </Link>
           </div>
           <div className="restaurant">
+            <Link to={"restaurantinfo?re_info=5"}>
             <img src={sitar} alt="Sitar" />
             <p>Sitar</p>
+            </Link>
           </div>
         
           

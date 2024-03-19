@@ -20,8 +20,10 @@ const RestaurantInfo = () => {
     'Satay Thai Grill', 'Sweet Dots Bubble Tea',
     'Holy Smokes', 'Red Bicycle',
     'Woodlands'];
-    const main_imgs = [require('../assets/banhmi&roll_m.webp'),require('../assets/banhmi&roll_m.webp'),require('../assets/banhmi&roll_m.webp')]
-    const place_info = [['Asian','7AM - 3PM','$$'],['Asian','6AM - 1PM','$$'],['Asian','6AM - 1PM','$$']]
+    const main_imgs = [require('../assets/banhmi&roll_b.webp'),require('../assets/barista-parlor_b.webp'),require('../assets/biscuit-love_b.webp'),
+    require('../assets/central-bbq_b.webp'), require('../assets/grain-berry_b.webp'), require('../assets/sitar_b.webp')]
+    const place_info = [['Vietnamese','11AM - 8PM','$$'],['Coffee Shop','7AM - 4PM','$'],['American','7AM - 3PM','$$'],
+    ['American','11AM - 9PM','$$'], ['Smoothie Shop', '7AM - 9PM','$$'], ['Indian', '10:45AM - 2PM','$$$']]
     /*Restaurant Info Separation*/ 
     const basic_text = [" | "," | ",""]
     const [review_cnt,setReview_cnt] = useState([]);
