@@ -14,31 +14,33 @@ const BlogPostCarousel = ({ blogPosts }) => {
   };
 
   useEffect(() => {
-    const slideInterval = setInterval(nextSlide, 10000); // Slides every 3 seconds
-
-    return () => clearInterval(slideInterval); // Clear interval when the component unmounts
-  }, [current, blogPosts.length, nextSlide]); // Add nextSlide to the dependency array
+    const slideInterval = setInterval(nextSlide, 10000);
+    return () => clearInterval(slideInterval);
+  }, [current, blogPosts.length]);
 
   return (
     <div className="blog-carousel">
       <button className="left-arrow" onClick={prevSlide}>&#10094;</button>
       <button className="right-arrow" onClick={nextSlide}>&#10095;</button>
-      {blogPosts.map((post, index) => {
-        return (
-          <div className={index === current ? 'slide active' : 'slide'} key={index}>
-            {index === current && (
-              <div>
-                <img src={post.imageUrl} alt={post.title} />
-                <div className="content">
-                  <span className="author">{post.author}</span>
-                  <h3 className="title">{post.title}</h3>
-                  <Link to={post.link} className="read-now">READ NOW</Link>
-                </div>
-              </div>
+      {blogPosts.map((post, index) => (
+      <div className={index === current ? 'slide active' : 'slide'} key={index}>
+        {index === current && (
+          <div>
+            <div className="content">
+              <h3 className="title">{post.title}</h3>
+              <span className="author">{post.author.name}</span>
+              <Link to={post.link} className="read-now">READ NOW</Link> {/* This will now be below the author */}
+            </div>
+            {post.image ? (
+              <img src={post.image} alt={post.title} className="carousel-image" />
+            ) : (
+              <div>No image URL</div>
             )}
           </div>
-        );
-      })}
+        )}
+      </div>
+      ))}
+
     </div>
   );
 };

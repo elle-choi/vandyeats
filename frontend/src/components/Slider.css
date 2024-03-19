@@ -8,18 +8,60 @@
 }
 
 .content {
-  position: absolute; /* Absolute position for floating effect */
-  bottom: 20px; /* Adjust as needed */
-  left: 20px; /* Adjust as needed */
-  color: white; /* Ensure text is visible on image */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
-  padding: 10px;
+  position: absolute;
+  bottom: 20px; /* or to your preferred position */
+  left: 20px; /* or to your preferred position */
+  color: white; /* or any other color that contrasts well with your images */
+  padding: 10px; /* Adjust or remove padding as needed */
+  z-index: 2; /* Ensure content is above the image */
+  width: calc(100% - 40px); /* Adjust based on the left and right spacing */
+  background-color: transparent;
 }
 
-/* Ensure .author and .title are styled appropriately */
-.author, .title {
-  margin: 0; /* Remove default margins */
+.carousel-image img{
+  display: block; /* Remove default img inline behavior */
+  width: 100%; /* Ensure image spans the full width of its container */
+  height: 600px; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the area without stretching the image */
 }
+/* Ensure .author and .title are styled appropriately */
+.title {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* This will make text easier to read */
+  font-size: 30px;
+}
+.author {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  font-size: 20px;
+}
+
+.read-now {
+  display: inline-block; /* Makes the link behave like a block, allowing padding */
+  padding: 8px 15px; /* Adjust padding to your liking */
+  background-color: transparent; /* Set the background color to white */
+  color: #ffffff; /* Set the text color to black */
+  text-transform: uppercase; /* Transforms text to uppercase */
+  font-weight: bold; /* Makes the text bold */
+  text-decoration: none; /* Removes the underline from the link */
+  border: 2px solid #ffffff; /* Adds a solid black border */
+  border-radius: 2px; /* Slightly rounded corners for the box */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional: Adds a subtle shadow for depth */
+  width: 121px;
+}
+
+.read-now:hover {
+  background-color: #000000; /* Change background color on hover */
+  color: #ffffff; /* Change text color on hover */
+  border-color: #ffffff; /* Change border color on hover */
+}
+
+.author, 
+.read-now {
+  display: block; /* This ensures that the elements stack on top of each other */
+  margin-bottom: 10px; /* Adds spacing below each element, adjust as needed */
+}
+
+
   
 .left-arrow, .right-arrow {
   position: absolute;
@@ -52,22 +94,4 @@
   background-color: transparent;
 }
 
-  .trending-restaurants .restaurants-list {
-    display: flex;
-    overflow-x: auto;
-    color: black;
-  }
-  
-  .restaurant-item {
-    text-align: center;
-    margin-right: 20px;
-    color: black;
-  }
-  
-  .restaurant-item img {
-    width: 200px; /* Set your desired size */
-    margin-bottom: 8px;
-  }
-  
-  /* Add responsive styles as needed */
-  
+
