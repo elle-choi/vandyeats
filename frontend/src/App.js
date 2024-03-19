@@ -9,6 +9,7 @@ import CreatePost from "./components/CreatePost.jsx"
 import RestaurantPage from "./components/RestaurantPage.jsx" 
 import ProfilePage from "./components/ProfilePage.jsx" 
 import BahnMi from "./components/BahnMi.jsx" 
+import RestaurantInfo from "./components/RestaurantInfo.jsx";
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/" element={<LoginPage />} />
         <Route path="/BahnMi" element={<BahnMi />} />
         <Route path="/createpost" element={<CreatePost />} />
+        <Route path="/restaurant/restaurantinfo" element={<RestaurantInfo/>} />
       </Routes>
     </Router>
   );

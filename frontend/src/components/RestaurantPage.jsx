@@ -66,19 +66,23 @@ const RestaurantPage = () => {
     {/* Restaurant items */}
     <div className="restaurant">
             {/* Replace <a> with Link */}
-            <Link to="/BahnMi">
+            <Link to={"restaurantinfo?re_info=0"}>
               <img src={banhMiRoll} alt="Banh Mi & Roll" />
               <p>Banh Mi & Roll +</p>
             </Link>
           </div>
 
           <div className="restaurant">
-            <img src={baristaParlor} alt="Barista Parlor" />
-            <p>Barista Parlor</p>
+            <Link to={"restaurantinfo?re_info=1"}>
+              <img src={baristaParlor} alt="Barista Parlor" />
+              <p>Barista Parlor</p>
+            </Link>
           </div>
           <div className="restaurant">
-            <img src={biscuitLove} alt="Biscuit Love" />
-            <p>Biscuit Love</p>
+            <Link to={"restaurantinfo?re_info=2"}>
+              <img src={biscuitLove} alt="Biscuit Love" />
+              <p>Biscuit Love</p>
+            </Link>
           </div>
           <div className="restaurant">
             <img src={centralBbq} alt="Central BBQ" />
