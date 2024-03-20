@@ -10,6 +10,15 @@ import RestaurantPage from "./components/RestaurantPage.jsx"
 import ProfilePage from "./components/ProfilePage.jsx" 
 import BahnMi from "./components/BahnMi.jsx" 
 import RestaurantInfo from "./components/RestaurantInfo.jsx";
+import Profile from "./components/ProfilePage.jsx"; 
+import EditProfile from "./components/EditProfile.js"; 
+import SavedBlogs from "./components/SavedBlogs.js"; 
+import Security from "./components/security.js"; 
+import Help from "./components/HelpPage.js"; 
+
+
+
+
 
 
 const App = () => {
@@ -26,7 +35,15 @@ const App = () => {
         <Route path="/BahnMi" element={<BahnMi />} />
         <Route path="/createpost" element={<CreatePost />} />
         <Route path="/restaurant/restaurantinfo" element={<RestaurantInfo/>} />
-      </Routes>
+        <Route path="/edit-profile" element={<EditProfile />} />
+        <Route path="/signout" element={<LoginPage />} />
+        <Route path="/saved-blogs" element={<SavedBlogs />} />
+        <Route path="/security" element={<Security />} />
+        <Route path="/help" element={<Help />} />
+
+
+
+        </Routes>
     </Router>
   );
 };
