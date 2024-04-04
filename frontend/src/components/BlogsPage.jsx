@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./NavBar.js";
 import { useNavigate } from "react-router-dom";
-import { getDocs, collection } from 'firebase/firestore';
+import { doc, setDoc, getDocs, collection } from 'firebase/firestore';
+import { auth } from "../firebase";
 import { db } from "../firebase";
+import { FaStar, FaRegStar } from 'react-icons/fa';
 
 const BlogPage = () => {
   const navigate = useNavigate();
@@ -32,6 +34,26 @@ const BlogPage = () => {
     }
   };
 
+  const handleSave = async (postId) => {
+    try {
+      // Get the current user ID
+      const userId = auth.currentUser.uid;
+  
+      // Reference to the saved_blogs collection for the current user
+      const savedBlogsCollectionRef = collection(db, `users/${userId}/saved_blogs`);
+  
+      // Create a new document in the saved_blogs collection with the postId as the document ID
+      await setDoc(doc(savedBlogsCollectionRef, postId), {
+        postId: postId,
+        savedAt: new Date()
+      });
+  
+      console.log("Blog post saved successfully:", postId);
+    } catch (error) {
+      console.error("Error saving post:", error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#fff9ef]">
       <Navbar />
@@ -54,7 +76,11 @@ const BlogPage = () => {
                 <p className="text-gray-700">{post.review}</p>
                 <div className="mt-4">
                   <p>Rating: {post.rating} stars</p>
-                  {/* Add 1 star display here */}
+                  {/* Render the save icon */}
+                  <button onClick={() => handleSave(post.id)} className="text-gray-500 hover:text-gray-700">
+  {/* Render the empty star icon */}
+  <FaRegStar />
+</button>
                 </div>
               </div>
               <div className="ml-4">
