@@ -1,26 +1,20 @@
+// TrendingRestaurants.js
 import React from 'react';
-import sitarLogo from '../assets/sitar.png';
-import grainberryLogo from '../assets/grain-berry.png';
-import centralbbqLogo from '../assets/central-bbq.png';
-import biscuitloveLogo from '../assets/biscuit-love.png';
-import "./TrendingRestaurants.css";
+import { Link } from 'react-router-dom';
+import './TrendingRestaurants.css';
 
-const TrendingRestaurants = () => {
-  const restaurants = [
-    { name: 'Biscuit Love', logo: biscuitloveLogo },
-    { name: 'Sitar Indian Food', logo: sitarLogo },
-    { name: 'Grains and Berries', logo: grainberryLogo },
-    { name: 'Central BBQ', logo: centralbbqLogo }
-  ];
-
+const TrendingRestaurants = ({ restaurants }) => {
   return (
     <div className="trending-restaurants">
       <h2 className="trending-restaurants-title">Trending Restaurants</h2>
       <div className="restaurants-list">
         {restaurants.map((restaurant, index) => (
           <div className="restaurant-item" key={index}>
-            <img src={restaurant.logo} alt={restaurant.name} />
-            <span>{restaurant.name}</span>
+            {/* Adjust the Link to include the "/restaurant" base path */}
+            <Link to={`/restaurant/restaurantinfo/${encodeURIComponent(restaurant.name)}`}>
+              <img src={restaurant.logo} alt={restaurant.name} />
+              <span>{restaurant.name}</span>
+            </Link>
           </div>
         ))}
       </div>
