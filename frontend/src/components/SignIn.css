@@ -73,3 +73,16 @@ a {
   color: red;
   margin-top: 10px;
 }
+
+input, select {
+  color: black;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border-radius: 8px; /* This will give you rounded corners */
+  border: 1px solid #ccc; /* Example border color, adjust as needed */
+}

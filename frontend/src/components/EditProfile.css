@@ -1,0 +1,46 @@
+/* Add this to your main CSS file */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #FFF9EF;
+  }
+  
+  /* Remove the background color from .profile-container if you apply it to the body */
+  .profile-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center your modal both vertically and horizontally */
+  }
+  
+  
+  .profile-container * {
+    color: black; /* This will ensure all text inside .profile-container is black */
+  }
+  
+  /* Additional specific styles for form elements if needed */
+  .profile-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-container .modal-input,
+  .profile-container label,
+  .profile-container button {
+    /* This ensures inputs, labels, and buttons have black text */
+    color: black;
+  }
+  
+  /* If you have a class for the button, set the text color */
+  .profile-container button {
+    background-color: #0ccd70; /* Change to your desired button background */
+    color: black; /* Set the text color for the button */
+    /* Add other button styling as needed */
+  }
+  
+ 

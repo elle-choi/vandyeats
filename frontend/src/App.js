@@ -8,9 +8,7 @@ import BlogsPage from "./components/BlogsPage.jsx"
 import CreatePost from "./components/CreatePost.jsx" 
 import RestaurantPage from "./components/RestaurantPage.jsx" 
 import ProfilePage from "./components/ProfilePage.jsx" 
-import BahnMi from "./components/BahnMi.jsx" 
 import RestaurantInfo from "./components/RestaurantInfo.jsx";
-import Profile from "./components/ProfilePage.jsx"; 
 import EditProfile from "./components/EditProfile.js"; 
 import SavedBlogs from "./components/SavedBlogs.js"; 
 import Security from "./components/security.js"; 
@@ -26,13 +24,12 @@ const App = () => {
     <Router>
       <Routes>
         {/* <Route path="/forgot-password" component={ForgotPassword} /> */}
-        <Route path="/login" element={<LoginLink />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/restaurant" element={<RestaurantPage />} />
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/" element={<LoginPage />} />
-        <Route path="/BahnMi" element={<BahnMi />} />
         <Route path="/createpost" element={<CreatePost />} />
         <Route path="/restaurant/restaurantinfo" element={<RestaurantInfo/>} />
         <Route path="/edit-profile" element={<EditProfile />} />
