@@ -5,13 +5,13 @@
     
   .restaurant-item {
     text-align: center;
-    margin-right: 80px;
-    margin-left: 80px;
+    margin-right: 100px;
+    margin-left: 100px;
     color: black;
   }
   
   .restaurant-item img {
-    width: 200px; /* Set your desired size */
+    width: 250px; /* Set your desired size */
     margin-bottom: 8px;
   }
 
@@ -19,7 +19,7 @@
     color: black; /* Example: change the color */
     text-align: center; /* Center align the title */
     font-size: 24px; /* Increase the font size */
-    margin-bottom: 20px; /* Add some space below the title */
+    margin-bottom: 10px; /* Add some space below the title */
     margin-top: 20px;
   }
     
