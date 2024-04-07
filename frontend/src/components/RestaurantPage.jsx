@@ -47,6 +47,10 @@ import pokebros from '../assets/pokebros.png';
 import satay from '../assets/satay.png';
 import sweetdots from '../assets/sweetdots.png';
 import woodlands from '../assets/woodlands.png';
+import red from '../assets/red_bicycle.png';
+import smokes from '../assets/holy_smokes.png';
+
+
 
 
 
@@ -67,19 +71,11 @@ const RestaurantPage = () => {
   return (
     <div className="w-screen h-screen flex flex-col">
       <NavBar />
+      
       <div className='bg-[#fff] flex flex-grow w-full mt-16'>
         <div className="res-container mx-auto">
-          <form onSubmit={handleSearchSubmit} className="res-search-form">
-            <input
-              type="text"
-              placeholder="Search ..."
-              value={searchQuery}
-              onChange={handleSearchChange}
-              className="res-search-input"
-            />
-            <button type="submit" className="res-search-button">Search</button>
-          </form>
-          <div className="res-banner">
+          
+        <div className="res-banner" style={{ marginTop: '50px' }}>
             <img src={bannerImage} alt="Campus Dining Division of Administration" />
           </div>
           <div className="res-content">
@@ -126,206 +122,234 @@ const RestaurantPage = () => {
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=5"}>
+                <Link to={"restaurantinfo?re_info=6"}>
                   <img src={hopdoddy} alt="Hopdoddy Burger Bar" />
                   <p>Hopdoddy Burger Bar</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=0"}>
+                <Link to={"restaurantinfo?re_info=7"}>
                   <img src={jenis} alt="Jeni's Spendid Ice Cream" />
                   <p>Jeni's Spendid Ice Cream</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=6"}>
+                <Link to={"restaurantinfo?re_info=8"}>
                   <img src={meet} alt="Meet Noodles" />
                   <p>Meet Noodles</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=7"}>
+                <Link to={"restaurantinfo?re_info=9"}>
                   <img src={eighty} alt="Sushi 88" />
                   <p>Sushi 88</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=8"}>
+                <Link to={"restaurantinfo?re_info=10"}>
                   <img src={mama} alt="Taco Mama" />
                   <p>Taco Mama</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=9"}>
+                <Link to={"restaurantinfo?re_info=11"}>
                   <img src={urban} alt="The Urban Juicer" />
                   <p>The Urban Juicer</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=10"}>
+                <Link to={"restaurantinfo?re_info=12"}>
                   <img src={jerrys} alt="Ben & Jerry's" />
                   <p>Ben & Jerry's</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=11"}>
+                <Link to={"restaurantinfo?re_info=13"}>
                   <img src={chuy} alt="Chuy's Tex Mex" />
                   <p>Chuy's Tex Mex</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=12"}>
+                <Link to={"restaurantinfo?re_info=14"}>
                   <img src={donatos} alt="Donatos Pizza" />
                   <p>Donatos Pizza</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=13"}>
+                <Link to={"restaurantinfo?re_info=15"}>
                   <img src={helens} alt="Helen's Hot Chicken" />
-                  <p>Helen's Hot Chicken </p>
+                  <p>Helen's Hot Chicken</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=14"}>
+                <Link to={"restaurantinfo?re_info=16"}>
+                  <img src={poki} alt="The Poki" />
+                  <p>The Poki</p>
+                </Link>
+                </div>
+              <div className="restaurant">
+                <Link to={"restaurantinfo?re_info=17"}>
+                  <img src={sarabhas} alt="Sarabha's Creamery" />
+                  <p>Sarabha's Creamery</p>
+                </Link>
+                </div>
+              <div className="restaurant">
+                <Link to={"restaurantinfo?re_info=18"}>
+                  <img src={slider} alt="The Slider House" />
+                  <p>The Slider House</p>
+                </Link>
+                </div>
+
+              <div className="restaurant">
+                <Link to={"restaurantinfo?re_info=19"}>
                   <img src={cookhouse} alt="Urban Cookhouse" />
                   <p>Urban Cookhouse</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=15"}>
+                <Link to={"restaurantinfo?re_info=20"}>
                   <img src={roast} alt="8th and Roast" />
                   <p>8th and Roast</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=16"}>
+                <Link to={"restaurantinfo?re_info=21"}>
                   <img src={bombay} alt="Bombay Palace" />
                   <p>Bombay Palace</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=17"}>
+                <Link to={"restaurantinfo?re_info=22"}>
                   <img src={chilis} alt="Chili's" />
                   <p>Chili's</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=18"}>
+                <Link to={"restaurantinfo?re_info=23"}>
                   <img src={crab} alt="Crab Fever" />
                   <p>Crab Fever</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=19"}>
+                <Link to={"restaurantinfo?re_info=24"}>
                   <img src={hyderabad} alt="Hyderabad House" />
                   <p>Hyderabad House</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=20"}>
+                <Link to={"restaurantinfo?re_info=25"}>
                   <img src={wendys} alt="Wendy's" />
                   <p>wendys</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=21"}>
+                <Link to={"restaurantinfo?re_info=26"}>
                   <img src={inchins} alt="Inchin's Bamboo Garden" />
                   <p>Inchin's Bamboo Garden</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=22"}>
+                <Link to={"restaurantinfo?re_info=27"}>
                   <img src={johns} alt="Papa John's" />
                   <p>Papa John's</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=23"}>
+                <Link to={"restaurantinfo?re_info=28"}>
                   <img src={sitar} alt="Sitar" />
                   <p>Sitar</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=24"}>
+                <Link to={"restaurantinfo?re_info=29"}>
                   <img src={fork} alt="Sun & Fork" />
                   <p>Sun & Fork</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=25"}>
+                <Link to={"restaurantinfo?re_info=30"}>
                   <img src={yaki} alt="Yaki House" />
                   <p>Yaki House</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=26"}>
+                <Link to={"restaurantinfo?re_info=31"}>
                   <img src={soda} alt="Elliston Place Soda Shop" />
                   <p>Elliston Place Soda Shop</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=27"}>
+                <Link to={"restaurantinfo?re_info=32"}>
                   <img src={frutta} alt="Frutta Bowl" />
                   <p>Frutta Bowl</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=28"}>
+                <Link to={"restaurantinfo?re_info=33"}>
                   <img src={sushi} alt="I Love Sushi" />
                   <p>I Love Sushi</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=29"}>
+                <Link to={"restaurantinfo?re_info=34"}>
                   <img src={roma} alt="Roma Pizza & Pasta" />
                   <p>Roma Pizza & Pasta</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=30"}>
+                <Link to={"restaurantinfo?re_info=35"}>
                   <img src={jets} alt="Jet's Pizza" />
                   <p>Jet's Pizza</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=31"}>
+                <Link to={"restaurantinfo?re_info=36"}>
                   <img src={michaelangelos} alt="Michaelangelo's Pizza" />
                   <p>Michaelangelo's Pizza</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=32"}>
+                <Link to={"restaurantinfo?re_info=37"}>
                   <img src={oscars} alt="Oscar's Taco Shop" />
                   <p>Oscar's Taco Shop</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=33"}>
+                <Link to={"restaurantinfo?re_info=38"}>
                   <img src={pokebros} alt="Poke Bros" />
                   <p>Poke Bros</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=34"}>
+                <Link to={"restaurantinfo?re_info=39"}>
                   <img src={satay} alt="Satay Thai Grill" />
                   <p>Satay Thai Grill</p>
                 </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=35"}>
+                <Link to={"restaurantinfo?re_info=40"}>
                   <img src={sweetdots} alt="Sweet Dots Bubble Tea" />
                   <p>Sweet Dots Bubble Tea</p>
                 </Link>
+                </div>
+              <div className="restaurant">
+                <Link to={"restaurantinfo?re_info=41"}>
+                  <img src={smokes} alt="Holy Smokes" />
+                  <p>Holy Smokes</p>
+                </Link>
+                </div>
+              <div className="restaurant">
+                <Link to={"restaurantinfo?re_info=42"}>
+                  <img src={red} alt="Red Bicycle" />
+                  <p>Red Bicycle</p>
+                </Link>
               </div>
               <div className="restaurant">
-                <Link to={"restaurantinfo?re_info=36"}>
+                <Link to={"restaurantinfo?re_info=43"}>
                   <img src={woodlands} alt="Woodlands" />
                   <p>Woodlands</p>
                 </Link>
               </div>
-
-
-              {/* Repeat for other restaurants */}
             </div>
           </div>
         </div>
