@@ -73,28 +73,30 @@ const HomePage = () => {
 
   const fetchAndProcessRestaurants = async () => {
     const querySnapshot = await getDocs(collection(db, "posts"));
-    let restaurantRatings = {};
+    let restaurantPostsCount = {};
 
-    querySnapshot.forEach(doc => {
-      const { restaurant, rating } = doc.data();
-      if (!restaurantRatings[restaurant]) {
-        restaurantRatings[restaurant] = { totalRating: 0, count: 0 };
+    // Count the number of posts for each restaurant
+    querySnapshot.forEach((doc) => {
+      const { restaurant } = doc.data();
+      if (!restaurantPostsCount[restaurant]) {
+        restaurantPostsCount[restaurant] = 0;
       }
-      restaurantRatings[restaurant].totalRating += rating;
-      restaurantRatings[restaurant].count += 1;
+      restaurantPostsCount[restaurant] += 1;
     });
 
-    const sortedRestaurants = Object.entries(restaurantRatings)
-      .map(([name, data]) => ({
+    // Convert the restaurantPostsCount object into an array and sort it based on the count
+    const sortedRestaurants = Object.entries(restaurantPostsCount)
+      .map(([name, count]) => ({
         name,
-        avgRating: data.totalRating / data.count,
-        logo: getRestaurantLogo(name), // Use the function to get the logo
+        postCount: count,
+        logo: getRestaurantLogo(name), // Keep using the function to get the logo
       }))
-      .sort((a, b) => b.avgRating - a.avgRating)
-      .slice(0, 4);
+      .sort((a, b) => b.postCount - a.postCount) // Sort by post count in descending order
+      .slice(0, 4); // Keep only the top 4 restaurants with the most posts
 
     setTopRestaurants(sortedRestaurants);
   };
+
 
   const getRestaurantLogo = (restaurantName) => {
     const logoMap = {
