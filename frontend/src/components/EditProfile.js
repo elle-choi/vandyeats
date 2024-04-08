@@ -172,7 +172,7 @@ const EditProfile = () => {
           {previewProfilePic && (
             <img src={previewProfilePic} alt="Profile Preview" className="profile-preview" />
           )}
-          <label htmlFor="profilePic">Profile Picture:</label>
+          <label htmlFor="ProfilePic">Profile Picture:</label>
           <input type="file" id="profilePic" name="profilePic" onChange={handleProfilePicChange} />
 
           {previewBackgroundPic && (
