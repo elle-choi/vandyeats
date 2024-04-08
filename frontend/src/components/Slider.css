@@ -1,97 +1,72 @@
+.blog-carousel {
+  position: relative;
+  width: 100%; /* Ensure the carousel takes the full width of its parent */
+  height: 600px; /* Fixed height to prevent size changes */
+  overflow: hidden; /* Ensures nothing spills outside the carousel bounds */
+}
+
 .slide {
-  display: none;
-  position: relative; /* Ensure this is set to make .content position correctly */
+  display: none; /* Hide slides by default */
+  position: absolute; /* Position slides on top of each other */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center; /* Center children horizontally */
+  align-items: center; /* Center children vertically */
 }
 
 .slide.active {
-  display: block;
+  display: flex; /* Only the active slide is displayed */
+}
+
+.carousel-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; /* Cover the area of the slide without stretching */
 }
 
 .content {
   position: absolute;
-  bottom: 20px; /* or to your preferred position */
-  left: 20px; /* or to your preferred position */
-  color: white; /* or any other color that contrasts well with your images */
-  padding: 10px; /* Adjust or remove padding as needed */
-  z-index: 2; /* Ensure content is above the image */
-  width: calc(100% - 40px); /* Adjust based on the left and right spacing */
-  background-color: transparent;
+  bottom: 20px;
+  left: 50%; /* Center the content horizontally */
+  transform: translateX(-50%); /* Adjust for the content's width */
+  z-index: 2;
+  text-align: center; /* Center text within the content box */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for legibility */
+  padding: 10px;
+  border-radius: 5px; /* Optional: rounded corners for the content box */
 }
-
-.carousel-image img{
-  display: block; /* Remove default img inline behavior */
-  width: 100%; /* Ensure image spans the full width of its container */
-  height: 600px; /* Maintain aspect ratio */
-  object-fit: cover; /* Cover the area without stretching the image */
-}
-/* Ensure .author and .title are styled appropriately */
-.title {
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* This will make text easier to read */
-  font-size: 30px;
-}
-.author {
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-  font-size: 20px;
-}
-
-.read-now {
-  display: inline-block; /* Makes the link behave like a block, allowing padding */
-  padding: 8px 15px; /* Adjust padding to your liking */
-  background-color: transparent; /* Set the background color to white */
-  color: #ffffff; /* Set the text color to black */
-  text-transform: uppercase; /* Transforms text to uppercase */
-  font-weight: bold; /* Makes the text bold */
-  text-decoration: none; /* Removes the underline from the link */
-  border: 2px solid #ffffff; /* Adds a solid black border */
-  border-radius: 2px; /* Slightly rounded corners for the box */
-  transition: all 0.3s ease; /* Smooth transition for hover effect */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional: Adds a subtle shadow for depth */
-  width: 121px;
-}
-
-.read-now:hover {
-  background-color: #000000; /* Change background color on hover */
-  color: #ffffff; /* Change text color on hover */
-  border-color: #ffffff; /* Change border color on hover */
-}
-
-.author, 
-.read-now {
-  display: block; /* This ensures that the elements stack on top of each other */
-  margin-bottom: 10px; /* Adds spacing below each element, adjust as needed */
-}
-
-
-  
 .left-arrow, .right-arrow {
   position: absolute;
-  /*display: inline-block;*/
   top: 50%;
   transform: translateY(-50%);
+  z-index: 3; /* Ensure they are above all other content */
   cursor: pointer;
-  color: black; /* Adjust the color as needed */
-  opacity: 0.5; /* Semi-transparent */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for visibility */
   border: none;
-  font-size: 64px; /* Increased initial size of arrows */
-  z-index: 2; /* Ensure arrows are above the image */
-  transition: all 0.3s ease; /* Smooth transition for hover effect */
-  outline: none; /* Remove outline */
-  background-color: transparent;
+  padding: 5px 10px; /* Smaller padding */
+  font-size: 18px; /* Smaller arrow size */
+  /* Optionally, add width and height if you want explicit sizes */
+  width: 30px; /* Example width, adjust as needed */
+  height: 30px; /* Example height, adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Circular buttons */
 }
 
 .left-arrow {
-  left: -500px;
+  left: 10px;
 }
 
 .right-arrow {
-  right: -500px;
+  right: 10px;
 }
 
 .left-arrow:hover, .right-arrow:hover {
-  opacity: 1; /* Fully visible on hover */
-  font-size: 42px; /* Further increase size on hover */
-  outline: none; /* Ensure outline is removed on hover too */
-  background-color: transparent;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover for better visibility */
 }
-
-

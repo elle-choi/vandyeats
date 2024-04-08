@@ -149,6 +149,7 @@ const HomePage = () => {
     <div className="homepage">
       <Navbar />
       <BlogPostCarousel blogPosts={blogPosts} />
+      <div className="separator-bar"></div> 
       <TrendingRestaurants restaurants={topRestaurants} />
     </div>
   );

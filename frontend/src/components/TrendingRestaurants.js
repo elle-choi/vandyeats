@@ -10,7 +10,6 @@ const TrendingRestaurants = ({ restaurants }) => {
       <div className="restaurants-list">
         {restaurants.map((restaurant, index) => (
           <div className="restaurant-item" key={index}>
-            {/* Adjust the Link to include the "/restaurant" base path */}
             <Link to={`/restaurant/restaurantinfo/${encodeURIComponent(restaurant.name)}`}>
               <img src={restaurant.logo} alt={restaurant.name} />
               <span>{restaurant.name}</span>
