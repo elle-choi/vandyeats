@@ -1,7 +1,7 @@
 .homepage {
   width: 100%; /* Fill the width */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  padding-top: 100px; /* Adjust based on your navbar's height */
+  padding-top: 80px; /* Adjust based on your navbar's height */
   background-color: #FFF9EF;
 }
 
