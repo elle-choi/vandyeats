@@ -17,18 +17,27 @@ const RestaurantInfo = () => {
     'Inchin’s Bamboo Garden', 'Papa John’s Pizza', 'Sitar', 'Sun & Fork',
     'Yaki House', 'Elliston Place Soda Shop', 'Frutta Bowls', 'I Love Sushi', 'Roma Pizza & Pasta',
     'Jet’s Pizza', 'Michaelangelo’s Pizza', 'Oscar’s Taco Shop', 'Poke Bros.',
-    'Satay Thai Grill', 'Sweet Dots Bubble Tea',
-    'Holy Smokes', 'Red Bicycle',
-    'Woodlands'];
+    'Satay Thai Grill', 'Sweet Dots Bubble Tea','Holy Smokes', 'Red Bicycle', 'Woodlands'];
+
     const main_imgs = [require('../assets/banhmi&roll_b.webp'),require('../assets/barista-parlor_b.webp'),require('../assets/biscuit-love_b.webp'),
-    require('../assets/central-bbq_b.webp'), require('../assets/grain-berry_b.webp'), require('../assets/sitar_b.webp')]
-    const place_info = [['Vietnamese','$$'],['Coffee','$'],['American','$$'],
-    ['American','$$'], ['Brunch', '$$'], ['American', '$$$'], ['American', '$$'], ['Ice Cream', '$$'], ['Chinese', '$$'], 
-    ['Japanese','$$$'], ['Mexican','$$'], ['Brunch','$$'], ['Ice Cream','$'], ['Mexican','$$'], ['Pizza','$$'], ['American','$$'], 
-    ['American','$$'], ['Coffee','$'], ['Indian','$$'], ['American','$$'], ['Seafood','$$$'], ['Indian','$$'], ['Fast Food','$'], 
-    ['Pan-Asian','$$$'], ['Pizza','$$'], ['Indian','$$$'], ['Brunch','$$'], ['Asian Fusion','$$'], ['American','$$'], 
-    ['Acai Bowl','$$'], ['Japanese','$$$'], ['Pizza','$$'], ['Pizza','$$'], ['Pizza','$$'], ['Mexican','$$'], ['Poke Bar','$$'], 
-    ['Thai','$$'], ['Boba Shop','$'], ['Indian','$$']]
+    require('../assets/central-bbq_b.webp'), require('../assets/grain-berry_b.webp'), require('../assets/grilled-cheeserie.webp'), 
+    require('../assets/hop-doddy.webp'), require('../assets/jenis-icecream.webp'), require('../assets/meet-noodles.webp'), require('../assets/sushi88.webp'), 
+    require('../assets/taco-mama.webp'), require('../assets/urban-juicer.webp'), require('../assets/ben-n-jerrys.webp'), require('../assets/chuys.webp'), 
+    require('../assets/donatos-pizza.webp'), require('../assets/helens-hot-chicken.webp'), require('../assets/the-poki.webp'), require('../assets/sarabhas-creamery.webp'), 
+    require('../assets/the-slider-house.webp'), require('../assets/urban-cookhouse.webp'), require('../assets/8th-and-roast.webp'), require('../assets/bombay-palace.webp'), 
+    require('../assets/chillis.webp'), require('../assets/crab-fever.webp'), require('../assets/hyderabad-house.webp'), require('../assets/wendys.webp'), 
+    require('../assets/inchins-bamboo-garden.webp'), require('../assets/papa-johns.webp'), require('../assets/sitar.webp'), require('../assets/sun-n-fork.webp'), 
+    require('../assets/yaki-house.webp'), require('../assets/elliston-place-soda-shop.webp'), require('../assets/frutta-bowls.webp'), require('../assets/i-love-sushi.webp'),
+    require('../assets/roma-pizza-n-pasta.webp'), require('../assets/jets-pizza.webp'), require('../assets/michaelangelos-pizza.webp'), require('../assets/oscars-taco-shop.webp')]
+
+    const place_info = [['Vietnamese','$$'],['Coffee Shop','$'],['American','$$'], ['American','$$'], ['Brunch', '$$'], ['American', '$$$'], 
+    ['American', '$$'], ['Ice Cream', '$$'], ['Chinese', '$$'], ['Japanese','$$$'], ['Mexican','$$'], ['Brunch','$$'], ['Ice Cream','$'], 
+    ['Mexican','$$'], ['Pizza','$$'], ['American','$$'], ['Poke Bowls','$$'], ['Ice Cream','$'], ['American','$$'],
+    ['American','$$'], ['Coffee Shop','$'], ['Indian','$$'], ['American','$$'], 
+    ['Seafood','$$$'], ['Indian','$$'], ['Fast Food','$'], ['Pan-Asian','$$$'], ['Pizza','$$'], ['Indian','$$$'], 
+    ['Brunch','$$'], ['Asian Fusion','$$'], ['Soda Shop','$$'], ['Acai Bowl','$$'], ['Japanese','$$$'], ['Pizza','$$'], 
+    ['Pizza','$$'], ['Pizza','$$'], ['Mexican','$$'], ['Poke Bar','$$'], ['Thai','$$'], ['Boba Shop','$'], 
+    ['American','$$'], ['Coffee Shop','$'], ['Indian','$$']]
 
     const menu_link = [["https://banhmiandrollplus.com/menu/"], ["https://baristaparlor.com/pages/menu"], ["https://www.biscuitlove.com/menu"], 
     ["https://eatcbq.com/"], ["https://grainandberry.com/menu/"], ["https://grilledcheeserie.com/menu/"], ["https://qrco.de/HDNashville"], 
