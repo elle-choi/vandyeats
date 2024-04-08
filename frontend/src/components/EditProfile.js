@@ -168,6 +168,11 @@ const EditProfile = () => {
               <option value="2026">2026</option>
               <option value="2027">2027</option>          </select>
           <label htmlFor="profilePic">Profile Picture:</label>
+
+          {previewProfilePic && (
+            <img src={previewProfilePic} alt="Profile Preview" className="profile-preview" />
+          )}
+          <label htmlFor="profilePic">Profile Picture:</label>
           <input type="file" id="profilePic" name="profilePic" onChange={handleProfilePicChange} />
 
           {previewBackgroundPic && (
