@@ -28,7 +28,9 @@ const RestaurantInfo = () => {
     require('../assets/chillis.webp'), require('../assets/crab-fever.webp'), require('../assets/hyderabad-house.webp'), require('../assets/wendys.webp'), 
     require('../assets/inchins-bamboo-garden.webp'), require('../assets/papa-johns.webp'), require('../assets/sitar.webp'), require('../assets/sun-n-fork.webp'), 
     require('../assets/yaki-house.webp'), require('../assets/elliston-place-soda-shop.webp'), require('../assets/frutta-bowls.webp'), require('../assets/i-love-sushi.webp'),
-    require('../assets/roma-pizza-n-pasta.webp'), require('../assets/jets-pizza.webp'), require('../assets/michaelangelos-pizza.webp'), require('../assets/oscars-taco-shop.webp')]
+    require('../assets/roma-pizza-n-pasta.webp'), require('../assets/jets-pizza.webp'), require('../assets/michaelangelos-pizza.webp'), require('../assets/oscars-taco-shop.webp'),
+    require('../assets/poke-bros.webp'), require('../assets/thai-satay.webp'),require('../assets/sweet-dots.webp'), require('../assets/holy-smokes.webp'), 
+    require('../assets/red-bicycle.webp'), require('../assets/woodlands.webp')]
 
     const place_info = [['Vietnamese','$$'],['Coffee Shop','$'],['American','$$'], ['American','$$'], ['Brunch', '$$'], ['American', '$$$'], 
     ['American', '$$'], ['Ice Cream', '$$'], ['Chinese', '$$'], ['Japanese','$$$'], ['Mexican','$$'], ['Brunch','$$'], ['Ice Cream','$'], 
@@ -43,14 +45,15 @@ const RestaurantInfo = () => {
     ["https://eatcbq.com/"], ["https://grainandberry.com/menu/"], ["https://grilledcheeserie.com/menu/"], ["https://qrco.de/HDNashville"], 
     ["https://jenis.com/collections/all-flavors"], ["https://meetnoodles.kwickmenu.com/"], ["https://menupages.com/sushi-88/2119-belcourt-ave-nashville"],
     ["https://tacomamaonline.com/view-menu/"], ["https://theurbanjuicer.com/our-menu/"], ["https://www.benjerry.com/flavors"], 
-    ["https://www.chuys.com/menu/food"], ["https://donatos.com/menu/pizza/hot-chicken"], ["https://www.helenshotchicken.com/menu"], 
+    ["https://www.chuys.com/menu/food"], ["https://donatos.com/menu/pizza/hot-chicken"], ["https://www.helenshotchicken.com/menu"], ["https://thepoki.com/brentwood-the-poki-food-menu"], 
+    ["https://sarabhascreamery.com/typography/"], ["https://sliderhousensh.com/food-menu"], 
     ["https://www.urbancookhouse.com/category/full-menu/?post_type=menu"], ["https://www.8thandroast.com/menu"], ["https://qmenu.us/#/bombay-palace-nashville/menu/menu-0/details"], 
     ["https://www.chilis.com/menu"], ["https://www.crabfever.com/"], ["https://hyderabadhousenashville.com/menu?location=hyderabadnashville"], 
     ["https://www.wendys.com/en-uk/menu/our-menu"], ["https://bamboo-gardens.com/menu/"], ["https://www.papajohns.com/order/menu"],["https://sitarnashville.com/menu"], 
     ["https://sunandfork.com/menu/"], ["https://www.yakihousenashville.com/en/menu"], ["https://www.ellistonplacesodashop.com/menu"], 
     ["https://fruttabowls.com/menus/"], ["https://www.ilovesushinashville.com/menu"], ["https://romapizzaandpasta.com/menu/"], ["https://www.jetspizza.com/menu/"], 
     ["https://www.michaelangelosmenu.com/"], ["https://oscarstacoshop.com/menu/south-nashville/"], ["https://eatpokebros.com/menu/"], ["https://www.thaisataynashville.com/menu"], 
-    ["https://www.sweetdots.com/menu"], ["https://woodlandstennessee.com/menu?location=woodlandstennessee"]]
+    ["https://www.sweetdots.com/menu"],  ["https://holysmokeskosher.org/menu"], ["https://redbicycleiris.square.site/"], ["https://woodlandstennessee.com/menu?location=woodlandstennessee"]]
 
     /*Restaurant Info Separation*/ 
     const basic_text = [" |",""]
