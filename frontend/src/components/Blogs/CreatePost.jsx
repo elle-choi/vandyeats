@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Navbar from "./NavBar.js";
+import Navbar from "../NavBar.js";
 import { FaStar } from 'react-icons/fa';
 import {addDoc, collection} from 'firebase/firestore'
-import { db, auth, storage } from "../firebase";
+import { db, auth, storage } from "../../firebase.js";
 import { useNavigate } from "react-router-dom";
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { serverTimestamp } from 'firebase/firestore';
@@ -74,7 +74,7 @@ const CreatePost = () => {
     'Woodlands'
   ];
 
-  const colorTheme = require('../assets/tailwind.config.js');
+  const colorTheme = require('../../assets/tailwind.config.js');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -156,7 +156,7 @@ const CreatePost = () => {
             ))}
           </select>
         </div>
-        <div className="mb-2">
+        {/* <div className="mb-2">
           <label htmlFor="review" className="block text-sm font-semibold text-gray-600">
             Review
           </label>
@@ -168,7 +168,36 @@ const CreatePost = () => {
             rows="4"
             required
           ></textarea>
-        </div>
+        </div> */}
+        <div className="mb-2">
+  <label htmlFor="review" className="block text-sm font-semibold text-gray-600">
+    Review
+  </label>
+  <ReactQuill
+    id="review"
+    value={review}
+    onChange={setReview}
+    className="text-black"
+    modules={{
+      toolbar: [
+        [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
+        [{size: []}],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{'list': 'ordered'}, {'list': 'bullet'}, 
+         {'indent': '-1'}, {'indent': '+1'}],
+        ['link', 'image', 'video'],
+        ['clean']
+      ]
+    }}
+    formats={[
+      'header', 'font', 'size',
+      'bold', 'italic', 'underline', 'strike', 'blockquote',
+      'list', 'bullet', 'indent',
+      'link', 'image', 'video'
+    ]}
+    placeholder="Write your review here..."
+  />
+</div>
         <div className="mb-2">
           <label htmlFor="image" className="block text-sm font-semibold text-gray-600">
             Image
