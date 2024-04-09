@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../NavBar.js"
+import Navbar from "../NavBar.js";
 import { useNavigate } from "react-router-dom";
 import {
   doc,
@@ -10,10 +10,11 @@ import {
 } from "firebase/firestore";
 import { auth } from "../../firebase.js";
 import { db } from "../../firebase.js";
-import { FaStar, FaRegStar } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { formatDistanceToNow } from "date-fns";
 import DOMPurify from "dompurify";
 import FullBlogPost from "./FullBlogPost";
+import "./BlogsPage.css";
 
 const BlogPage = () => {
   const navigate = useNavigate();
@@ -134,57 +135,58 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fff9ef]">
+    <div className="container">
       <Navbar />
-      <div className="content max-h-screen overflow-y-scroll">
-        <div className="flex justify-between items-center mb-2">
-          <h1 className="text-2xl font-bold text-green-500">Explore</h1>
-          <button
-            onClick={createPost}
-            className="bg-[#38761D] text-white px-1 py-1 w-23 rounded-md hover:bg-[#2b5916]]"
-          >
-            Create Post
-          </button>
+      <div>
+        <div class="top">
+          <div class="left">
+            <span class="explore">Explore</span>
+            <span class="my-blog">My Blog</span>
+          </div>
+          <div class="right">
+            <button class="create-post" onclick="createPost()">
+              Create Post
+            </button>
+          </div>
         </div>
-        <div className="mt-4">
+        <div>
           {postList.map((post) => (
             <div
               key={post.id}
-              className="border p-4 rounded-md bg-white mb-4 flex"
+              className="post"
               onClick={() => navigate(`/blog/${post.id}`)}
             >
-              <div className="flex-1">
-                <img
-                  src={userProfilePics[post.author.id]}
-                  alt={`Profile of ${post.author.name}`}
-                  className="w-10 h-10 rounded-full mr-2"
-                />
-                <p className="text-gray-600">{post.author.name}</p>
-                <h2 className="text-xl text-gray-600 font-bold mb-2">
-                  {post.title}
-                </h2>
-                <p className="text-gray-700">
+              <div class="left-content">
+                <div class="authorinfo_time">
+                  <img
+                    src={userProfilePics[post.author.id]}
+                    alt={`Profile of ${post.author.name}`}
+                    class="profile-pic"
+                  />
+                  <div class="post-info">
+                    <p class="author">{post.author.name}</p>
+                    <p class="timestamp">{getTimeAgo(post.timestamp)}</p>
+                  </div>
+                </div>
+
+                <h2 className="title">{post.title}</h2>
+                <p className="review">
                   {stripHtmlTags(post.review)
                     .split(" ")
                     .slice(0, 150)
                     .join(" ")}
                   {stripHtmlTags(post.review).length > 50 ? "..." : ""}
                 </p>
-                <div>
-                  <p className="text-gray-700">Rating: {post.rating} stars</p>
-                  <p className="text-gray-700">
-                    Posted {getTimeAgo(post.timestamp)}
-                  </p>
-                  <button onClick={() => handleSave(post.id)}>
-                    <FaRegStar />
-                  </button>
-                </div>
+                
+                <button onClick={() => handleSave(post.id)}>
+                  <FaHeart color="black" />
+                </button>
               </div>
-              <div className="ml-4">
+              <div class= "right-content">
                 <img
                   src={post.image}
                   alt={`Blog ${post.title}`}
-                  className="w-32 h-32 object-cover rounded-md"
+                  className="post-image"
                 />
               </div>
             </div>
