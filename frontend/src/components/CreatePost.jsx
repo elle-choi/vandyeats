@@ -5,6 +5,9 @@ import {addDoc, collection} from 'firebase/firestore'
 import { db, auth, storage } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { serverTimestamp } from 'firebase/firestore';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
@@ -75,25 +78,26 @@ const CreatePost = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       // Upload image to Firebase Storage
       const imageRef = ref(storage, 'images/' + image.name);
       await uploadBytes(imageRef, image);
-
+  
       // Get the download URL of the uploaded image
       const imageUrl = await getDownloadURL(imageRef);
-
-      // Add post data to Firestore with the image URL
+  
+      // Add post data to Firestore with the image URL and timestamp
       await addDoc(postsCollectionRef, {
         title,
         rating,
         restaurant,
         review,
         image: imageUrl,
-        author: { name: auth.currentUser.displayName, id: auth.currentUser.uid }
+        author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
+        timestamp: serverTimestamp()
       });
-
+  
       console.log('Success'); // Log success if there is no error
       navigate("/blogs");
     } catch (error) {
