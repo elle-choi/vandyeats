@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import Navbar from "./NavBar.js";
+import Navbar from "../NavBar.js";
 import { FaStar } from 'react-icons/fa';
 import {addDoc, collection} from 'firebase/firestore'
-import { db, auth, storage } from "../firebase";
+import { db, auth, storage } from "../../firebase.js";
 import { useNavigate } from "react-router-dom";
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { serverTimestamp } from 'firebase/firestore';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
@@ -71,29 +74,30 @@ const CreatePost = () => {
     'Woodlands'
   ];
 
-  const colorTheme = require('../assets/tailwind.config.js');
+  const colorTheme = require('../../assets/tailwind.config.js');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       // Upload image to Firebase Storage
       const imageRef = ref(storage, 'images/' + image.name);
       await uploadBytes(imageRef, image);
-
+  
       // Get the download URL of the uploaded image
       const imageUrl = await getDownloadURL(imageRef);
-
-      // Add post data to Firestore with the image URL
+  
+      // Add post data to Firestore with the image URL and timestamp
       await addDoc(postsCollectionRef, {
         title,
         rating,
         restaurant,
         review,
         image: imageUrl,
-        author: { name: auth.currentUser.displayName, id: auth.currentUser.uid }
+        author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
+        timestamp: serverTimestamp()
       });
-
+  
       console.log('Success'); // Log success if there is no error
       navigate("/blogs");
     } catch (error) {
@@ -152,7 +156,7 @@ const CreatePost = () => {
             ))}
           </select>
         </div>
-        <div className="mb-2">
+        {/* <div className="mb-2">
           <label htmlFor="review" className="block text-sm font-semibold text-gray-600">
             Review
           </label>
@@ -164,7 +168,36 @@ const CreatePost = () => {
             rows="4"
             required
           ></textarea>
-        </div>
+        </div> */}
+        <div className="mb-2">
+  <label htmlFor="review" className="block text-sm font-semibold text-gray-600">
+    Review
+  </label>
+  <ReactQuill
+    id="review"
+    value={review}
+    onChange={setReview}
+    className="text-black"
+    modules={{
+      toolbar: [
+        [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
+        [{size: []}],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{'list': 'ordered'}, {'list': 'bullet'}, 
+         {'indent': '-1'}, {'indent': '+1'}],
+        ['link', 'image', 'video'],
+        ['clean']
+      ]
+    }}
+    formats={[
+      'header', 'font', 'size',
+      'bold', 'italic', 'underline', 'strike', 'blockquote',
+      'list', 'bullet', 'indent',
+      'link', 'image', 'video'
+    ]}
+    placeholder="Write your review here..."
+  />
+</div>
         <div className="mb-2">
           <label htmlFor="image" className="block text-sm font-semibold text-gray-600">
             Image

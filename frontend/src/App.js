@@ -4,8 +4,8 @@ import LoginPage from "./components/SignIn.jsx"
 // import ForgotPassword from "./components/ForgotPassword";
 import LoginLink from "./components/SignIn.jsx";
 import HomePage from "./components/HomePage.jsx" 
-import BlogsPage from "./components/BlogsPage.jsx" 
-import CreatePost from "./components/CreatePost.jsx" 
+import BlogsPage from "./components/Blogs/BlogsPage.jsx" 
+import CreatePost from "./components/Blogs/CreatePost.jsx" 
 import RestaurantPage from "./components/RestaurantPage.jsx" 
 import ProfilePage from "./components/ProfilePage.jsx" 
 import RestaurantInfo from "./components/RestaurantInfo.jsx";
@@ -13,11 +13,7 @@ import EditProfile from "./components/EditProfile.js";
 import SavedBlogs from "./components/SavedBlogs.js"; 
 import Security from "./components/security.js"; 
 import Help from "./components/HelpPage.js"; 
-
-
-
-
-
+import FullBlogPost from "./components/Blogs/FullBlogPost.jsx";
 
 const App = () => {
   return (
@@ -37,9 +33,7 @@ const App = () => {
         <Route path="/saved-blogs" element={<SavedBlogs />} />
         <Route path="/security" element={<Security />} />
         <Route path="/help" element={<Help />} />
-
-
-
+        <Route path="/blog/:postId" element={<FullBlogPost />} />
         </Routes>
     </Router>
   );
