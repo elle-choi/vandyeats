@@ -37,6 +37,13 @@
   padding: 10px;
   border-radius: 5px; /* Optional: rounded corners for the content box */
 }
+
+.blog-carousel .slide .content .title {
+  margin-top: 2px;
+  font-size: 24px; /* Adjust to your preferred size */
+  font-weight: bold; /* Makes the text bold */
+}
+
 .left-arrow, .right-arrow {
   position: absolute;
   top: 50%;

@@ -1,0 +1,64 @@
+/* FullBlogPost.css */
+
+/* Main container styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Back to Blogs link styles */
+  .back-link {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: black;
+    margin-top: 100px;
+    display: flex;
+    align-items: flex-end; 
+    margin-right: auto; 
+  }
+  
+  /* Post title styles */
+  .post-title {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    color:black;
+  }
+  
+  /* Author profile picture styles */
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Author name styles */
+  .author-name {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #38761D;
+  }
+  
+  /* Posted date styles */
+  .posted-date {
+    color: #858585;
+  }
+  
+  /* Thin gray line */
+  .gray-line {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+  }
+  
+  /* Review styles */
+  .review {
+    color: #858585;
+  }
+  
+  .header {
+    display: flex;
+}
