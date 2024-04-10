@@ -141,10 +141,10 @@ const BlogPage = () => {
         <div class="top">
           <div class="left">
             <span class="explore">Explore</span>
-            <span class="my-blog">My Blog</span>
+            <span class="my-blog">My Blogs</span>
           </div>
           <div class="right">
-            <button class="create-post" onclick="createPost()">
+            <button class="create-post" onClick={createPost}>
               Create Post
             </button>
           </div>
