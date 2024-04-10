@@ -1,10 +1,12 @@
-// FullBlogPost.js
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Component } from "react";
 import Navbar from "../NavBar.js";
 import { Link, useParams } from "react-router-dom";
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import { formatDistanceToNow } from "date-fns";
+import "./FullBlogPost.css";
+import Icon from "@mdi/react";
+import { mdiArrowLeft } from "@mdi/js";
 
 const FullBlogPost = () => {
   const { postId } = useParams();
@@ -50,28 +52,36 @@ const FullBlogPost = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fff9ef]">
+    <div className="container">
       <Navbar />
-      <div className="content max-h-screen overflow-y-scroll">
-        <div className="border p-4 rounded-md bg-white mb-4 flex">
-          <div className="flex-1">
-          <Link to="/blogs" className="text-blue-500">&#8592; Back to Blogs</Link>
-            <img
-              src={authorProfilePic}
-              alt={`Profile of ${post.author.name}`}
-              className="w-10 h-10 rounded-full mr-2"
-            />
-            <p className="text-gray-600">{post.author.name}</p>
-            <h2 className="text-xl text-gray-600 font-bold mb-2">{post.title}</h2>
-            <div className="text-gray-700" dangerouslySetInnerHTML={{ __html: post.review }} />
-            <div>
-              <p className="text-gray-700">Rating: {post.rating} stars</p>
-              <p className="text-gray-700">
-                    Posted {getTimeAgo(post.timestamp)}
-                  </p>
-            </div>
-          </div>
+      <div>
+        <div>
+        <Link to="/blogs" className="back-link">
+          <Icon path={mdiArrowLeft} size={1} color="black" />
+        </Link>
         </div>
+        
+        <h2 className="post-title">{post.title}</h2>
+
+        <div className="header">
+        <img
+          src={authorProfilePic}
+          alt={`Profile of ${post.author.name}`}
+          className="profile-pic"
+        />
+
+        <div className="author">
+        <p className="author-name">{post.author.name}</p>
+        <p className="posted-date">Posted {getTimeAgo(post.timestamp)}</p>
+        </div>
+        
+        </div>
+        
+        <div className="gray-line"></div>
+        <div
+          className="review"
+          dangerouslySetInnerHTML={{ __html: post.review }}
+        />
       </div>
     </div>
   );
