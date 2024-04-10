@@ -109,3 +109,9 @@
 .post button:focus {
     outline: none; /* Remove focus outline */
 }
+
+.heart-button {
+    margin-top: 20px; 
+    padding: 5px 5px 5px 5px;
+    width: 30px;
+}

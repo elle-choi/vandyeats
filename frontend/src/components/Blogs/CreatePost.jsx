@@ -74,7 +74,6 @@ const CreatePost = () => {
     'Woodlands'
   ];
 
-  const colorTheme = require('../../assets/tailwind.config.js');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -98,7 +97,7 @@ const CreatePost = () => {
         timestamp: serverTimestamp()
       });
   
-      console.log('Success'); // Log success if there is no error
+      console.log('Success'); 
       navigate("/blogs");
     } catch (error) {
       console.error('Error:', error);
@@ -156,19 +155,7 @@ const CreatePost = () => {
             ))}
           </select>
         </div>
-        {/* <div className="mb-2">
-          <label htmlFor="review" className="block text-sm font-semibold text-gray-600">
-            Review
-          </label>
-          <textarea
-            id="review"
-            value={review}
-            onChange={(e) => setReview(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 text-black"
-            rows="4"
-            required
-          ></textarea>
-        </div> */}
+        
         <div className="mb-2">
   <label htmlFor="review" className="block text-sm font-semibold text-gray-600">
     Review
