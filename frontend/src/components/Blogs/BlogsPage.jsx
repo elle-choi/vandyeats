@@ -7,6 +7,7 @@ import {
   getDocs,
   collection,
   serverTimestamp,
+  deleteDoc
 } from "firebase/firestore";
 import { auth } from "../../firebase.js";
 import { db } from "../../firebase.js";
@@ -21,6 +22,7 @@ const BlogPage = () => {
   const [postList, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
   const [userProfilePics, setUserProfilePics] = useState({});
+  const [savedPosts, setSavedPosts] = useState([]);
 
   useEffect(() => {
     const getPosts = async () => {
@@ -77,6 +79,22 @@ const BlogPage = () => {
     fetchUserProfilePics();
   }, []);
 
+  useEffect(() => {
+    const fetchSavedPosts = async () => {
+      try {
+        const userId = auth.currentUser.uid;
+        const savedBlogsCollectionRef = collection(db, `users/${userId}/saved_blogs`);
+        const snapshot = await getDocs(savedBlogsCollectionRef);
+        const savedPostIds = snapshot.docs.map(doc => doc.data().postId);
+        setSavedPosts(savedPostIds);
+      } catch (error) {
+        console.error("Error fetching saved posts:", error);
+      }
+    };
+
+    fetchSavedPosts();
+  }, []);
+
   const createPost = async () => {
     try {
       console.log("Success");
@@ -88,26 +106,33 @@ const BlogPage = () => {
 
   const handleSave = async (postId) => {
     try {
-      // Get the current user ID
       const userId = auth.currentUser.uid;
-
-      // Reference to the saved_blogs collection for the current user
-      const savedBlogsCollectionRef = collection(
-        db,
-        `users/${userId}/saved_blogs`
-      );
-
-      // Create a new document in the saved_blogs collection with the postId as the document ID
-      await setDoc(doc(savedBlogsCollectionRef, postId), {
-        postId: postId,
-        savedAt: new Date(),
-      });
-
-      console.log("Blog post saved successfully:", postId);
+      const savedBlogsCollectionRef = collection(db, `users/${userId}/saved_blogs`);
+      
+      // Check if the post is already saved
+      if (savedPosts.includes(postId)) {
+        // Remove the post from saved posts
+        const updatedSavedPosts = savedPosts.filter(id => id !== postId);
+        setSavedPosts(updatedSavedPosts);
+        
+        // Delete the document from the saved blogs collection
+        await deleteDoc(doc(savedBlogsCollectionRef, postId));
+      } else {
+        // Add the post to saved posts
+        const updatedSavedPosts = [...savedPosts, postId];
+        setSavedPosts(updatedSavedPosts);
+        
+        // Create a new document in the saved_blogs collection
+        await setDoc(doc(savedBlogsCollectionRef, postId), {
+          postId: postId,
+          savedAt: new Date(),
+        });
+      }
     } catch (error) {
       console.error("Error saving post:", error);
     }
   };
+  
 
   const getTimeAgo = (timestamp) => {
     if (timestamp && timestamp.toDate) {
@@ -178,9 +203,15 @@ const BlogPage = () => {
                   {stripHtmlTags(post.review).length > 50 ? "..." : ""}
                 </p>
                 
-                <button onClick={() => handleSave(post.id)}>
-                  <FaHeart color="black" />
-                </button>
+                <button
+      className="heart-button"
+      onClick={(e) => {
+        e.stopPropagation(); // Stop event propagation
+        handleSave(post.id);
+      }}
+    >
+      <FaHeart color={savedPosts.includes(post.id) ? "red" : "#858585"} />
+    </button>
               </div>
               <div class= "right-content">
                 <img
