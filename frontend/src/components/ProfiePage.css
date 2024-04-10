@@ -1,6 +1,48 @@
-.profile{
+/* HomePage.css */
+
+.post-item {
+    display: flex;
+    border: 2px solid #ddd;
+    margin: 16px 32px;
+    border-radius: 8px;
+    overflow: hidden; /* This makes sure that the border-radius clips the image */
+  }
+  
+  .post-item img {
+    width: 128px; /* Adjust as needed */
+    height: 128px; /* Adjust as needed */
+    object-fit: cover;
+  }
+  
+  .post-author {
+    display: flex;
+    align-items: center;
+  }
+  
+  .post-author img {
+    width: 48px; /* Adjust as needed */
+    height: 48px; /* Adjust as needed */
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .post-content {
+    padding: 16px;
     width: 100%;
-    height: 10%;
-    font-family: Arial, sans-serif;
-    color: #212121;
-}
+  }
+  
+  .post-title {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+  
+  .post-review {
+    color: #666;
+  }
+  
+  .post-rating {
+    font-weight: bold;
+  }
+  
+  /* You may need to adjust these styles to suit your specific design */
+  

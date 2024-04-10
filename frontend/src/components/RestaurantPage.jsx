@@ -72,7 +72,7 @@ const RestaurantPage = () => {
     <div className="w-screen h-screen flex flex-col">
       <NavBar />
       
-      <div className='bg-[#fff] flex flex-grow w-full mt-16'>
+      <div className='bg-[#FFF9EF] flex flex-grow w-full mt-16'>
         <div className="res-container mx-auto">
           
         <div className="res-banner" style={{ marginTop: '50px' }}>

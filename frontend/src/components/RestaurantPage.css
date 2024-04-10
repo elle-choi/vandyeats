@@ -1,7 +1,7 @@
 .restaurant-page {
   position: relative; /* Ensure this is here if using absolute positioning for the container */
   font-family: Arial, sans-serif;
-  background-color: #FFF9EF; /* New background color */
+  background-color: #FFF9EF;
 }
 
 .restaurant-container {
@@ -29,7 +29,7 @@
 
 
 .res-search-input, .res-search-button {
-  border: 2px solid #ccc;
+  border: 2px solid #FFF9EF;
   padding: 20px;
   height: 40px; /* Adjust the height as needed */
   border-radius: 20px; /* Creates a rounded appearance */
@@ -38,7 +38,7 @@
 }
 .res-search-input {
   flex-grow: 1;
-  border: 2px solid #ccc; /* Subtle border for definition */
+  border: 2px solid #FFF9EF;
   padding: 10px 20px;
   border-radius: 40px; /* Increase border-radius for more rounded corners */
   margin-right: 10px; /* Space between input and button */
@@ -50,7 +50,7 @@
 
 .res-search-button {
   right: 0; /* This positions the container to the right */
-  background-color: #FFF;
+  background-color: #FFF9EF;
   border-left: none; /* Removes the border between the input and the button */
   border-radius: 0 20px 20px 0; /* Round right corners */
   width: 50px; /* Adjust width as necessary */

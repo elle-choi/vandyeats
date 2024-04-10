@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from "./NavBar.js";
 import { Link } from "react-router-dom";
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from "../firebase"; // Adjust this path to your firebase config file
+import { db } from "../firebase.js"; // Adjust this path to your firebase config file
 
 // Adjusted Home component to SavedBlogs to focus on displaying saved blog posts
 const SavedBlogs = () => {

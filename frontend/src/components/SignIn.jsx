@@ -12,7 +12,9 @@ const SignIn = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [profilePic, setProfilePic] = useState(null);
-  const [preview, setPreview] = useState(""); // State for storing the preview URL
+  const [backgroundPic, setBackgroundPic] = useState(null);
+  const [previewProfile, setPreviewProfile] = useState("");
+  const [previewBackground, setPreviewBackground] = useState("");
 
   useEffect(() => {
     document.body.style.backgroundColor = "black";
@@ -25,13 +27,25 @@ const SignIn = () => {
     if (profilePic) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setPreview(reader.result);
+        setPreviewProfile(reader.result);
       };
       reader.readAsDataURL(profilePic);
     } else {
-      setPreview(null);
+      setPreviewProfile(null);
     }
   }, [profilePic]);
+
+  useEffect(() => {
+    if (backgroundPic) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewBackground(reader.result);
+      };
+      reader.readAsDataURL(backgroundPic);
+    } else {
+      setPreviewBackground(null);
+    }
+  }, [backgroundPic]);
 
   const signInWithGoogle = async (e) => {
     e.preventDefault();
@@ -68,16 +82,31 @@ const SignIn = () => {
     }
   };
 
+  const handleBackgroundPicChange = (event) => {
+    if (event.target.files[0]) {
+      setBackgroundPic(event.target.files[0]);
+    } else {
+      setBackgroundPic(null);
+    }
+  };
+
   const handleAdditionalInfoSubmit = async (event) => {
     event.preventDefault();
     const { gender, birthday, location, classOf } = event.target.elements;
     const user = auth.currentUser;
 
     let profilePicUrl = '';
+    let backgroundPicUrl = '';
     if (profilePic) {
       const profilePicRef = ref(storage, `profilePics/${user.uid}/${profilePic.name}`);
       await uploadBytes(profilePicRef, profilePic);
       profilePicUrl = await getDownloadURL(profilePicRef);
+    }
+
+    if (backgroundPic) {
+      const backgroundPicRef = ref(storage, `backgroundPics/${user.uid}/${backgroundPic.name}`);
+      await uploadBytes(backgroundPicRef, backgroundPic);
+      backgroundPicUrl = await getDownloadURL(backgroundPicRef);
     }
 
     await setDoc(doc(db, "users", user.uid), {
@@ -86,8 +115,9 @@ const SignIn = () => {
       gender: gender.value,
       birthday: birthday.value,
       location: location.value,
-      classOf: classOf.value, // Storing the selected class of the user
+      classOf: classOf.value,
       profilePic: profilePicUrl,
+      backgroundPic: backgroundPicUrl,
     });
 
     setShowModal(false);
@@ -106,10 +136,15 @@ const SignIn = () => {
           <form onSubmit={handleAdditionalInfoSubmit}>
             <label htmlFor="profilePic">Profile Picture:</label>
             <input type="file" id="profilePic" name="profilePic" onChange={handleProfilePicChange} />
-            {preview && (
-              <img src={preview} alt="Profile preview" style={{ height: "100px", width: "100px", objectFit: "cover" }} />
+            {previewProfile && (
+              <img src={previewProfile} alt="Profile Preview" style={{ height: "100px", width: "100px", objectFit: "cover" }} />
             )}
-            <label htmlFor="gender">Gender:</label>
+            <label htmlFor="backgroundPic">Background Picture:</label>
+            <input type="file" id="backgroundPic" name="backgroundPic" onChange={handleBackgroundPicChange} />
+            {previewBackground && (
+              <img src={previewBackground} alt="Background Preview" style={{ height: "100px", width: "100px", objectFit: "cover" }} />
+            )}
+             <label htmlFor="gender">Gender:</label>
             <select id="gender" name="gender" required className="modal-input">
               <option value="">Select Gender</option>
               <option value="Female">Female</option>
@@ -176,3 +211,5 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
+
