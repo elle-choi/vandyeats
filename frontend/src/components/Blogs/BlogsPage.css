@@ -74,6 +74,7 @@
 .post h2.title {
     font-weight: bold;
     color: black;
+    margin-top: 20px;
 }
 
 /* Review styles */
@@ -90,9 +91,6 @@
     margin-left: 50px; 
 }
 
-.title {
-    margin-top: 10px;
-}
 
 .right-content {
     display: flex;
@@ -115,3 +113,8 @@
     padding: 5px 5px 5px 5px;
     width: 30px;
 }
+
+.left-content {
+    max-width: 700px; /* Adjust the maximum width as per your layout */
+    word-wrap: break-word; /* Allow the text to wrap */
+  }
