@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
 import { db } from "../firebase.js"; // Adjust this path to your firebase config file
 
+
 // Adjusted Home component to SavedBlogs to focus on displaying saved blog posts
 const SavedBlogs = () => {
     const [postList, setPostList] = useState([]); // State to store the fetched blog posts
