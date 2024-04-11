@@ -83,3 +83,8 @@
   .title{
     margin-top: 100px;
   }
+
+  .quill-editor-wrapper .ql-editor {
+    max-width: 500px; /* Set the maximum width */
+    word-wrap: break-word; /* Allow the text to wrap */
+  }
