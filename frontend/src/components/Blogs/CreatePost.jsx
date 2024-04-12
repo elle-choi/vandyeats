@@ -49,17 +49,16 @@ const CreatePost = () => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       stars.push(
-        <span key={i} onClick={() => handleStarClick(i)}>
+        <span key={i} onClick={() => setRating(i)}>
           <FaStar
-            className={`cursor-pointer text-${
-              rating >= i ? "yellow" : "gray"
-            }-500 ${rating > 0 ? "fill-current" : "fill-transparent"}`}
+            className={`cursor-pointer text-${i <= rating ? "yellow" : "gray"}-500 fill-current`}
           />
         </span>
       );
     }
     return stars;
   };
+
 
   const restaurantOptions = [
     "Banh Mi & Roll",
@@ -150,109 +149,99 @@ const CreatePost = () => {
 
   return (
     <div className="container">
-      <Navbar />
-      <div className="title">Create Blog Post</div>
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <div className="selections">
-            <div className="image-container">
-              <label htmlFor="image">Cover Image</label>
-              <input
-                type="file"
-                accept="image/*"
-                id="image"
-                onChange={handleImageChange}
-              />
-              {imagePreview && (
-                <div>
-                  <img src={imagePreview} alt="Selected" />
-                </div>
-              )}
-            </div>
-            <div className="form-group">
-              <label htmlFor="title">Title</label>
-              <input
-                type="text"
-                id="title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                className="text-input"
-                required
-              />
-              <label htmlFor="rating">Rating: {rating} stars</label>
-              <div className="star-rating">{renderStars()}</div>
-              <label htmlFor="restaurant">Restaurant</label>
-              <select
-                id="restaurant"
-                value={restaurant}
-                onChange={(e) => setRestaurant(e.target.value)}
-                className="select-input"
-                required
-              >
-                <option value="">Select a restaurant</option>
-                {restaurantOptions.map((option, index) => (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-
-              <div className="review-input">
+    <Navbar />
+    <div className="title">Create Blog Post</div>
+    <div className="form-container">
+      <form onSubmit={handleSubmit}>
+        <div className="selections">
+          <div className="image-container">
+            <label htmlFor="image">Cover Image</label>
+            <input
+              type="file"
+              accept="image/*"
+              id="image"
+              onChange={handleImageChange}
+            />
+            {imagePreview && (
+              <div>
+                <img src={imagePreview} alt="Selected" />
+              </div>
+            )}
+          </div>
+          <div className="form-group">
+            <label htmlFor="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="text-input"
+              required
+            />
+            <label htmlFor="rating">Rating: {rating} stars</label>
+            <div className="star-rating">{renderStars()}</div>
+            <label htmlFor="restaurant">Restaurant</label>
+            <select
+              id="restaurant"
+              value={restaurant}
+              onChange={(e) => setRestaurant(e.target.value)}
+              className="select-input"
+              required
+            >
+              <option value="">Select a restaurant</option>
+              {restaurantOptions.map((option, index) => (
+                <option key={index} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+  
+            <div className="review-input">
               <label htmlFor="review">Review</label>
               <ReactQuill
-  id="review"
-  value={review}
-  onChange={setReview}
-  className={`quill-editor quill-editor-wrapper`} 
-  modules={{
-    toolbar: [
-      [{ header: "1" }, { header: "2" }, { font: [] }],
-      [{ size: [] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" },
-      ],
-      ["link", "image", "video"],
-      ["clean"],
-    ],
-  }}
-  formats={[
-    "header",
-    "font",
-    "size",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-    "video",
-  ]}
-  placeholder="Write your review here..."
-/>
-
+              theme="snow"
+                value={review}
+                onChange={setReview}
+                className={`quill-editor quill-editor-wrapper`}
+                modules={{
+                  toolbar: [
+                    [{ header: "1" }, { header: "2" }, { font: [] }, { size: [] }, "bold", "italic", "underline", "strike", "blockquote",{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" },
+                    "link", "image", "video",
+                    "clean"],
+                  ],
+                }}
+                formats={[
+                  "header",
+                  "font",
+                  "size",
+                  "bold",
+                  "italic",
+                  "underline",
+                  "strike",
+                  "blockquote",
+                  "list",
+                  "bullet",
+                  "indent",
+                  "link",
+                  "image",
+                  "video",
+                ]}
+                placeholder="Write your review here..."
+              />
             </div>
-            </div>
-            
           </div>
-
-          <button
-            type="submit"
-            className="submit-button"
-            onClick={handleSubmit}
-          >
-            Submit
-          </button>
-        </form>
-      </div>
+        </div>
+  
+        <button
+          type="submit"
+          className="submit-button"
+          onClick={handleSubmit}
+        >
+          Submit
+        </button>
+      </form>
     </div>
+  </div>
   );
 };
 

@@ -54,7 +54,7 @@ const FullBlogPost = () => {
   return (
     <div className="container">
       <Navbar />
-      <div>
+      <div className="post-content">
         <div>
         <Link to="/blogs" className="back-link">
           <Icon path={mdiArrowLeft} size={1} color="black" />

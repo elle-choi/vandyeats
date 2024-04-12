@@ -62,3 +62,8 @@
   .header {
     display: flex;
 }
+
+.post-content{
+  width: 800px;
+  word-wrap: break-word;
+}
