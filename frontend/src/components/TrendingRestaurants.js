@@ -36,19 +36,21 @@ const restaurantInfoLinks = {
   "Sun & Fork": 29,
   "Yaki House": 30,
   "Elliston Place Soda Shop": 31,
-  "Frutta Bowl": 32,
+  "Frutta Bowls": 32,
   "I Love Sushi": 33,
   "Roma Pizza & Pasta": 34,
-  "Jet's Pizza": 35,
+  "Jet’s Pizza": 35,  // Adjusted to match the exact name from the database
   "Michaelangelo's Pizza": 36,
   "Oscar's Taco Shop": 37,
-  "Poke Bros": 38,
+  "Poke Bros.": 38,
   "Satay Thai Grill": 39,
   "Sweet Dots Bubble Tea": 40,
   "Holy Smokes": 41,
   "Red Bicycle": 42,
   "Woodlands": 43,
 };
+
+
 
 
 const TrendingRestaurants = ({ restaurants }) => {
