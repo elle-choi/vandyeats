@@ -136,7 +136,7 @@ const RestaurantInfo = () => {
             <div class='w-full h-full flex-col text-black items-center'>
                 {/** Navigation UI */}
                 <div class='w-full h-2/12 flex mt-5  pl-5'>
-                    <Link to='../' class='hover:text-orange-300'>Home</Link>
+                    <Link to='../home' class='hover:text-orange-300'>Home</Link>
                     <a>/</a>
                     <Link to='../restaurant' class='hover:text-orange-300'>Restaurant</Link>
                     <a>/</a>

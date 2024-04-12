@@ -159,14 +159,14 @@ const Home = () => {
           </div>
 
         </div>
-        <div class='w-9/12 flex flex-col flex-grow'>
+        <div class='w-9/12 relative flex flex-col flex-grow'>
+          
           {/* profile image */}
           <div class="h-56 w-9/12 absolute flex items-end">
             <img className="object-cover ml-10 mb-2 h-20 w-20 rounded-full" src={userData.profilePic || 'https://via.placeholder.com/150'} alt="Profile" />
-
           </div>
-
           <div className="w-full h-56">
+            
             {/* Background image and user details */}
             <div className="h-3/4 w-full flex justify-between items-baseline px-6 pt-6">
               <img
@@ -256,6 +256,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 
