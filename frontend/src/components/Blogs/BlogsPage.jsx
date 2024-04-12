@@ -166,7 +166,6 @@ const BlogPage = () => {
         <div class="top">
           <div class="left">
             <span class="explore">Explore</span>
-            <span class="my-blog">My Blogs</span>
           </div>
           <div class="right">
             <button class="create-post" onClick={createPost}>
@@ -196,12 +195,11 @@ const BlogPage = () => {
 
                 <h2 className="title">{post.title}</h2>
                 <p className="review">
-                  {stripHtmlTags(post.review)
-                    .split(" ")
-                    .slice(0, 150)
-                    .join(" ")}
-                  {stripHtmlTags(post.review).length > 50 ? "..." : ""}
-                </p>
+  {stripHtmlTags(post.review).length > 150 ? 
+    `${stripHtmlTags(post.review).substring(0, 150)}...` :
+    stripHtmlTags(post.review)
+  }
+</p>
                 
                 <button
       className="heart-button"
