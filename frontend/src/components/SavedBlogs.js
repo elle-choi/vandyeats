@@ -42,6 +42,21 @@ const SavedBlogs = () => {
         fetchSavedPosts();
     }, []);
 
+    //function to temporarily remove images from post review to only show text in the preview
+  const stripHtmlTags = (html) => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const imgElements = doc.getElementsByTagName("img");
+
+    // Replace img elements with placeholders and remove [Image: ] from text
+    for (let i = imgElements.length - 1; i >= 0; i--) {
+      const img = imgElements[i];
+      const placeholder = document.createTextNode("");
+      img.parentNode.replaceChild(placeholder, img);
+    }
+
+    return doc.body.textContent.replace(/\[Image: \]/g, "") || "";
+  };
+
     return (
         <div className="w-screen h-screen flex flex-col">
             <Navbar />
