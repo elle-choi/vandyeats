@@ -7,6 +7,7 @@ import { formatDistanceToNow } from "date-fns";
 import "./FullBlogPost.css";
 import Icon from "@mdi/react";
 import { mdiArrowLeft } from "@mdi/js";
+import { FaStar } from "react-icons/fa";
 
 const FullBlogPost = () => {
   const { postId } = useParams();
@@ -56,27 +57,34 @@ const FullBlogPost = () => {
       <Navbar />
       <div className="post-content">
         <div>
-        <Link to="/blogs" className="back-link">
-          <Icon path={mdiArrowLeft} size={1} color="black" />
-        </Link>
+          <Link to="/blogs" className="back-link">
+            <Icon path={mdiArrowLeft} size={1} color="black" />
+          </Link>
         </div>
-        
+
         <h2 className="post-title">{post.title}</h2>
 
         <div className="header">
-        <img
-          src={authorProfilePic}
-          alt={`Profile of ${post.author.name}`}
-          className="profile-pic"
-        />
+          <img
+            src={authorProfilePic}
+            alt={`Profile of ${post.author.name}`}
+            className="profile-pic"
+          />
 
-        <div className="author">
-        <p className="author-name">{post.author.name}</p>
-        <p className="posted-date">Posted {getTimeAgo(post.timestamp)}</p>
+          <div className="author">
+            <p className="author-name">{post.author.name}</p>
+            <p className="posted-date">Posted {getTimeAgo(post.timestamp)}</p>
+          </div>
+
         </div>
-        
-        </div>
-        
+
+        <div className="restaurant-rating">
+            <p className="restaurant">{post.restaurant}</p>
+            <div className="rating">
+              {post.rating} <FaStar className="star" />
+            </div>
+          </div>
+
         <div className="gray-line"></div>
         <div
           className="review"

@@ -67,3 +67,24 @@
   width: 800px;
   word-wrap: break-word;
 }
+
+.restaurant-rating {
+  display: flex;
+  margin-left: 60px;
+  color: #858585;
+}
+
+.rating{
+  display: flex;
+}
+
+.star{
+  color: #E2BA3F;
+  margin-top: 5px
+}
+
+.restaurant{
+  margin-right: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
