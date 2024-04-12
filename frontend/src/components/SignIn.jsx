@@ -144,7 +144,65 @@ const SignIn = () => {
             {previewBackground && (
               <img src={previewBackground} alt="Background Preview" style={{ height: "100px", width: "100px", objectFit: "cover" }} />
             )}
-            {/* Additional fields and submission button */}
+             <label htmlFor="gender">Gender:</label>
+            <select id="gender" name="gender" required className="modal-input">
+              <option value="">Select Gender</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Other">Other</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+
+            <label htmlFor="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday" required className="modal-input" />
+
+            <label htmlFor="location">Location:</label>
+            <select id="location" name="location" required className="modal-input">
+            <option value="">Select Location</option>
+              <option value="Crawford House">Crawford House</option>
+              <option value="East House">East House</option>
+              <option value="Gillete House">Gillete House</option>
+              <option value="Hank Ingram House">Hank Ingram House</option>
+              <option value="Memorial House">Memorial House</option>
+              <option value="Murray House">Murray House</option>
+              <option value="North House">North House</option>
+              <option value="Stambaugh House">Stambaugh House</option>
+              <option value="Sutherland House">Sutherland House</option>
+              <option value="West House">West House</option>
+              <option value="Blakemore House">Blakemore House</option>
+              <option value="Chaffin Place">Chaffin Place</option>
+              <option value="Cole Hall">Cole Hall</option>
+              <option value="Lewis House">Lewis House</option>
+              <option value="Lupton House">Lupton House</option>
+              <option value="McTyeire Hall">McTyeire Hall</option>
+              <option value="Morgan House">Morgan House</option>
+              <option value="Scales House">Scales House</option>
+              <option value="Stapleton House">Stapleton House</option>
+              <option value="Tolman Hall">Tolman Hall</option>
+              <option value="Vaughn House">Vaughn House</option>
+              <option value="Village at Vanderbilt South Tower">Village at Vanderbilt South Tower</option>
+              <option value="Village at Vanderbilt Townhouses">Village at Vanderbilt Townhouses</option>
+              <option value="E. Bronson Ingram College">E. Bronson Ingram College</option>
+              <option value="Moore College">Moore College</option>
+              <option value="Zeppos College">Zeppos College</option>
+              <option value="Rothschild College">Rothschild College</option>
+              <option value="Warren College">Warren College</option>
+              <option value="Mayfield Place">Mayfield Place</option>
+              <option value="McGill Hall">McGill Hall</option>
+              <option value="Off Campus">Off Campus</option>
+            </select>
+
+            <label htmlFor="classOf">Class Of:</label>
+            <select id="classOf" name="classOf" required className="modal-input">
+              <option value="">Select Class</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              {/* Add more class options as needed */}
+            </select>
+
+            <button type="submit">Submit</button>
           </form>
         </div>
       )}
@@ -153,3 +211,4 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
