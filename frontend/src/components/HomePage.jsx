@@ -86,9 +86,9 @@ const HomePage = () => {
 
     // Convert the restaurantPostsCount object into an array and sort it based on the count
     const sortedRestaurants = Object.entries(restaurantPostsCount)
-      .map(([name, data]) => ({
+      .map(([name, count]) => ({
         name,
-        postCount: data.count,
+        postCount: count,
         logo: getRestaurantLogo(name), // Keep using the function to get the logo
       }))
       .sort((a, b) => b.postCount - a.postCount) // Sort by post count in descending order
