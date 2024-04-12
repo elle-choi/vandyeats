@@ -13,7 +13,6 @@ const EditProfile = () => {
   const [previewBackgroundPic, setPreviewBackgroundPic] = useState('');
   const navigate = useNavigate();
 
-
   useEffect(() => {
     const fetchData = async () => {
       const userRef = doc(db, 'users', auth.currentUser.uid);
@@ -28,7 +27,9 @@ const EditProfile = () => {
   useEffect(() => {
     if (profilePic) {
       const reader = new FileReader();
-      reader.onloadend = () => setPreviewProfilePic(reader.result);
+      reader.onloadend = () => {
+        setPreviewProfilePic(reader.result);
+      };
       reader.readAsDataURL(profilePic);
     } else {
       setPreviewProfilePic(null);
@@ -38,7 +39,9 @@ const EditProfile = () => {
   useEffect(() => {
     if (backgroundPic) {
       const reader = new FileReader();
-      reader.onloadend = () => setPreviewBackgroundPic(reader.result);
+      reader.onloadend = () => {
+        setPreviewBackgroundPic(reader.result);
+      };
       reader.readAsDataURL(backgroundPic);
     } else {
       setPreviewBackgroundPic(null);
@@ -101,33 +104,24 @@ const EditProfile = () => {
       alert("There was an error updating the profile.");
     }
   };
-  
 
   return (
     <div className="profile-container">
-      <div className="modal">
-        <form onSubmit={handleSubmit}>
-          {previewProfilePic && (
-            <img src={previewProfilePic} alt="Profile Preview" className="profile-preview" />
-          )}
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" defaultValue={user?.name} className="modal-input" />
-
-
-          <label htmlFor="gender">Gender:</label>
-          <select id="gender" name="gender" defaultValue={user?.gender} className="modal-input">
-            <option value="Female">Female</option>
-            <option value="Male">Male</option>
-            <option value="Other">Other</option>
-            <option value="Prefer not to say">Prefer not to say</option>
-          </select>
-
-          <label htmlFor="birthday">Birthday:</label>
-          <input type="date" id="birthday" name="birthday" defaultValue={user?.birthday} className="modal-input" />
-
-          <label htmlFor="location">Location:</label>
-          <select id="location" name="location" defaultValue={user?.location} className="modal-input">
-          <option value="Crawford House">Crawford House</option>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" name="name" defaultValue={user?.name} className="modal-input" />
+        <label htmlFor="gender">Gender:</label>
+        <select id="gender" name="gender" defaultValue={user?.gender} className="modal-input">
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+          <option value="Other">Other</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+        <label htmlFor="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday" defaultValue={user?.birthday} className="modal-input" />
+        <label htmlFor="location">Location:</label>
+        <select id="location" name="location" defaultValue={user?.location} className="modal-input">
+        <option value="Crawford House">Crawford House</option>
               <option value="East House">East House</option>
               <option value="Gillete House">Gillete House</option>
               <option value="Hank Ingram House">Hank Ingram House</option>
@@ -157,33 +151,28 @@ const EditProfile = () => {
               <option value="Warren College">Warren College</option>
               <option value="Mayfield Place">Mayfield Place</option>
               <option value="McGill Hall">McGill Hall</option>
-              <option value="Off Campus">Off Campus</option>
-          </select>
-
-          <label htmlFor="classOf">Class Of:</label>
-          <select id="classOf" name="classOf" defaultValue={user?.classOf} className="modal-input">
+              <option value="Off Campus">Off Campus</option>     
+                 </select>
+        <label htmlFor="classOf">Class Of:</label>
+        <select id="classOf" name="classOf" defaultValue={user?.classOf} className="modal-input">
           <option value="">Select Class</option>
               <option value="2024">2024</option>
               <option value="2025">2025</option>
               <option value="2026">2026</option>
-              <option value="2027">2027</option>          </select>
-          <label htmlFor="profilePic">Profile Picture:</label>
-
-          {previewProfilePic && (
-            <img src={previewProfilePic} alt="Profile Preview" className="profile-preview" />
-          )}
-          <label htmlFor="ProfilePic">Profile Picture:</label>
-          <input type="file" id="profilePic" name="profilePic" onChange={handleProfilePicChange} />
-
-          {previewBackgroundPic && (
-            <img src={previewBackgroundPic} alt="Background Preview" className="background-preview" />
-          )}
-          <label htmlFor="backgroundPic">Background Picture:</label>
-          <input type="file" id="backgroundPic" name="backgroundPic" onChange={handleBackgroundPicChange} />
-
-          <button type="submit">Update Profile</button>
-        </form>
-      </div>
+              <option value="2027">2027</option>   
+                   </select>
+        <label htmlFor="profilePic">Profile Picture:</label>
+        <input type="file" id="profilePic" name="profilePic" onChange={handleProfilePicChange} />
+        {previewProfilePic && (
+          <img src={previewProfilePic} alt="Profile Preview" style={{ height: "100px", width: "100px", objectFit: "cover" }} />
+        )}
+        <label htmlFor="backgroundPic">Background Picture:</label>
+        <input type="file" id="backgroundPic" name="backgroundPic" onChange={handleBackgroundPicChange} />
+        {previewBackgroundPic && (
+          <img src={previewBackgroundPic} alt="Background Preview" style={{ height: "100px", width: "100px", objectFit: "cover" }} />
+        )}
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
