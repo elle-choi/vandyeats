@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './NavBar'; // Adjust the import path as necessary
 import { getAuth, deleteUser } from 'firebase/auth';
+import { getFirestore, deleteDoc, collection, query, where, getDocs } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
 const Security = () => {
@@ -19,9 +20,26 @@ const Security = () => {
       console.log("Account deletion confirmed, reason: ", reason);
 
       try {
-        // Logic to delete account goes here
+        // Logic to delete user authentication
         await deleteUser(user);
-        console.log("User account deleted successfully.");
+
+        
+
+        // Logic to delete user posts
+        const postQuery = query(collection(db, 'posts'), where('author.id', '==', user.uid));
+        const postSnapshot = await getDocs(postQuery);
+        const batch = db.batch();
+        postSnapshot.forEach((doc) => {
+          batch.delete(doc.ref);
+        });
+        await batch.commit();
+
+        // Logic to delete user data from Firestore
+        const db = getFirestore();
+        const userRef = collection(db, 'users').doc(user.uid);
+        await deleteDoc(userRef);
+
+        console.log("User account and associated data deleted successfully.");
         navigate('/login'); // Redirect user to login page after account deletion
       } catch (error) {
         console.error("Error deleting user account: ", error.message);

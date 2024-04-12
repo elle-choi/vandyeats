@@ -137,7 +137,7 @@ const Home = () => {
                   <path d="M1420 128q23 0 44 9 33 13 52.5 41t19.5 62v1289q0 34-19.5 62t-52.5 41q-19 8-44 8-48 0-83-32l-441-424-441 424q-36 33-83 33-23 0-44-9-33-13-52.5-41t-19.5-62V240q0-34 19.5-62t52.5-41q21-9 44-9h1048z" />
                 </svg>
               </div>
-              <Link to="/saved-blogs" className='text-[#212121] font-bold'>Saved Blogs</Link>
+              <Link to="/saved-blogs" className='text-[#212121] font-bold'>Liked Blogs</Link>
             </div>
             <div class='ml-10 flex items-center my-3'>
               <div class='w-16 h-16 flex justify-center items-center'>
