@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Navbar from "./NavBar.js";
 import { auth, db } from "../firebase.js"; // Assuming auth is for authentication and db is the Firestore database instance
 import { doc, getDoc, getDocs, collection } from 'firebase/firestore';
+import { useNavigate } from "react-router-dom";
 
 const SavedBlogs = () => {
     const [savedPosts, setSavedPosts] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchSavedPosts = async () => {
@@ -68,7 +70,7 @@ const SavedBlogs = () => {
                             <div className='w-full bg-[rgb(254,249,240)]'>
                                 <div className='justify-center border-gray-600 rounded-md mx-5 py-2'>
                                     {savedPosts.map((post) => (
-                                        <div key={post.id} className="p-4 mb-4 flex border-2 rounded-lg border-gray-400">
+                                        <div key={post.id} className="p-4 mb-4 flex border-2 rounded-lg border-gray-400" onClick={() => navigate(`/blog/${post.id}?source=saved-blogs`)}>
                                             <div className="flex-col w-10/12">
                                                 <div className='flex items-center'>
                                                     <img

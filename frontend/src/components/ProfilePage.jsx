@@ -220,7 +220,7 @@ const Home = () => {
               <div className='w-full bg-[rgb(254,249,240)]'>
                 <div className='justify-center border-gray-600 rounded-md mx-5 py-2'>
                   {userPosts.map((post) => (
-                    <div key={post.id} className="p-4 mb-4 flex border-2 rounded-lg border-gray-400">
+                    <div key={post.id} className="p-4 mb-4 flex border-2 rounded-lg border-gray-400" onClick={() => navigate(`/blog/${post.id}?source=profile`)}>
                       <div className="flex-col w-10/12">
                         <div className='flex items-center'>
                         <img
