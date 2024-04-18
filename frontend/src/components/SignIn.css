@@ -46,7 +46,7 @@ button {
   width: 80%; /* Make the button full-width */
 }
 
-button:hover {
+.login-container button:hover {
   background-color: #285515;
 }
 
@@ -87,4 +87,8 @@ input, select {
   box-sizing: border-box;
   border-radius: 8px; /* This will give you rounded corners */
   border: 1px solid #ccc; /* Example border color, adjust as needed */
+}
+
+.login-container button {
+  background-color: #38761D; 
 }

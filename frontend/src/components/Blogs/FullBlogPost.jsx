@@ -10,7 +10,7 @@ import { mdiArrowLeft } from "@mdi/js";
 import { FaStar } from "react-icons/fa";
 
 const FullBlogPost = () => {
-  const { postId } = useParams();
+  const { postId, source } = useParams();
   const [post, setPost] = useState(null);
   const [authorProfilePic, setAuthorProfilePic] = useState(null);
 
@@ -51,13 +51,25 @@ const FullBlogPost = () => {
       return "Unknown"; // or any default value you prefer
     }
   };
+  const getBackLink = () => {
+    switch (source) {
+      case "restaurant":
+        return "/restaurant";
+      case "profile":
+        return "/profile";
+      case "saved-blogs":
+        return "/saved-blogs";
+      default:
+        return "/blogs";
+    }
+  };
 
   return (
     <div className="container">
       <Navbar />
       <div className="post-content">
         <div>
-          <Link to="/blogs" className="back-link">
+          <Link to={getBackLink()} className="back-link">
             <Icon path={mdiArrowLeft} size={1} color="black" />
           </Link>
         </div>
